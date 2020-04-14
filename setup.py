@@ -6,15 +6,15 @@ from setuptools import setup
 
 pwd = path.abspath(path.dirname(__file__))
 with codecs.open(path.join(pwd, 'README.md'), 'r', encoding='utf8') as input:
-    long_description = input.read()
+	long_description = input.read()
 
-version='1.1'
+version='1.2'
 	
 setup(
 	name='Swapsies',
 	version=version,
 	license='MIT',
-    long_description=long_description,
+	long_description=long_description,
 	long_description_content_type="text/markdown",
 	url='https://github.com/eddo888/Swapsies',
 	download_url='https://github.com/eddo888/Swapsies/archive/%s.tar.gz'%version,
@@ -36,8 +36,19 @@ setup(
 		'Argumental',
 		'GoldenChild',
 	],
-	scripts=list(map(
-		lambda x: 'bin/%s'%x, 
-		os.listdir('bin')
-	)),
+	scripts=[
+		"bin/OPML.py",
+		"bin/text2opml.py",
+		"bin/wsdl2file.py",
+		"bin/pdf2text.py",
+		"bin/email2vcard.py",
+		"bin/contact2vcard.py",
+		"bin/xls2dict.py",
+		"bin/COD.py",
+		"bin/tree2xmi.py",
+		"bin/cdata2xml.py",
+		"bin/xls2opml.py",
+		"bin/outlines.py",
+		"bin/xml2cdata.py",
+	],
 )
