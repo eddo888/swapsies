@@ -4,6 +4,8 @@
 
 import sys, os, json, logging, arrow, codecs
 
+sys.path.append('..')
+
 from uuid import uuid4
 
 from Baubles.Logger import Logger
@@ -23,7 +25,7 @@ for name in [
 
 logger.setLevel(logging.INFO)
 
-from binding import *
+from Swapsies.CloudOutlinerXSD import *
 
 
 #____________________________________________________________
