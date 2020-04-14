@@ -31,8 +31,8 @@ setup(
 		'Perdy',
 		'Argumental',
 	],
-	scripts=map(
+	scripts=list(map(
 		lambda x: 'bin/%s'%x, 
 		os.listdir('bin')
-	),
+	)),
 )
