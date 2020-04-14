@@ -25,11 +25,13 @@ setup(
 	],
 	install_requires=[
 		'argcomplete',
-		'libxml2-python3',
+		'xlrd',
+		'xlwt',
 		'xmltodict',
 		'Baubles',
 		'Perdy',
 		'Argumental',
+		'GoldenChild',
 	],
 	scripts=list(map(
 		lambda x: 'bin/%s'%x, 
