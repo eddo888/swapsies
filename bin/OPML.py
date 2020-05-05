@@ -274,15 +274,17 @@ class OPML(object):
 			stack[-1]['outline'].append(outline)				
 
 			
-		name = file.replace('docx','opml')
-		with open(name,'w') as output:
+		name = '.outline.opml'
+		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, pretty=True)
 		print(name)
-
-		name = file.replace('docx','json')
-		with open(name,'w') as output:
+		
+		name = '.outline.json'
+		with open(name, 'w') as output:
 			json.dump(opml, output, indent=4)
-			
+		print(name)
+
+		
 	#.............................................................
 	@args.operation
 	def docxIndented2opml(self, file):
