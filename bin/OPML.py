@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # PYTHON_ARGCOMPLETE_OK
 
-import os,sys,re,json,codecs,StringIO,xmltodict,unicodedata
+import os,sys,re,json,codecs,xmltodict,unicodedata
 
 from collections import OrderedDict
+from io import StringIO
 
 from Perdy.pyxbext import directory
 
@@ -119,7 +120,7 @@ class OPML(object):
 		xP = 'outline[@structure="paragraph"]'
 		for headline in getElements(self.ctx,xH):
 			delAttribute(headline, 'structure')
-			sio = StringIO.StringIO()
+			sio = StringIO()
 			for paragraph in getElements(self.ctx,xP,headline):
 				sio.write('%s\n'%paragraph.prop('text'))
 				paragraph.unlinkNode()
@@ -149,7 +150,7 @@ class OPML(object):
 						(indent, text) = bulletMatch.groups()[1:]
 					else:
 						continue
-				print '%s%s\n'%(indent, text)
+				print('%s%s\n'%(indent, text))
 
 	#.............................................................
 	@args.operation
@@ -243,15 +244,17 @@ class OPML(object):
 				parent = stack[-1]['outline'][-1]
 				if '@_note' not in parent.keys():
 					parent['@_note'] = ''
-				lines = filter(lambda x: len(x), parent['@_note'].split('\n'))
+				lines = list(filter(lambda x: len(x), parent['@_note'].split('\n')))
 				lines.append(text)
 				parent['@_note'] = '\n'.join(lines)
 				continue
 			
 			if not ps.name.startswith('Heading'):
+				sys.stderr.write('%s\n'%ps.name)
 				continue
 
-			level=int(ps.name.replace('Heading ',''))
+			heading = ps.name.replace('Heading ','').split(' ')[0]
+			level=int(heading)
 
 			print('%s %s'%('  '*(level-1), text))
 
@@ -312,7 +315,7 @@ class OPML(object):
 			text = paragraph.text.strip()
 			
 			if pf.first_line_indent or pf.left_indent:
-				print paragraph.text
+				print(paragraph.text)
 
 			if len(text) == 0: continue
 
