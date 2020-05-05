@@ -234,7 +234,7 @@ class OPML(object):
 
 		for paragraph in doc.paragraphs:
 			ps = paragraph.style
-			text = paragraph.text.strip()
+			text = paragraph.text.strip().replace('\t',' ').replace('\n',' ')
 
 			if len(text) == 0: continue
 			
@@ -250,7 +250,7 @@ class OPML(object):
 				continue
 			
 			if not ps.name.startswith('Heading'):
-				sys.stderr.write('%s\n'%ps.name)
+				#sys.stderr.write('%s\n'%ps.name)
 				continue
 
 			heading = ps.name.replace('Heading ','').split(' ')[0]
@@ -276,7 +276,7 @@ class OPML(object):
 			
 		name = file.replace('docx','opml')
 		with open(name,'w') as output:
-			xmltodict.unparse(opml, output)
+			xmltodict.unparse(opml, output, pretty=True)
 		print(name)
 
 		name = file.replace('docx','json')
