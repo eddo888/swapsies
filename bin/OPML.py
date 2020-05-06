@@ -315,7 +315,7 @@ class OPML(object):
 			
 		name = 'outline.opml'
 		with open(name, 'w') as output:
-			xmltodict.unparse(opml, output, pretty=True)
+			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
 		
 		name = 'outline.json'
