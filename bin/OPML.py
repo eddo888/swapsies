@@ -17,12 +17,14 @@ from docx.styles.style import _ParagraphStyle
 
 from Argumental.Argue import Argue
 from Baubles.Logger import Logger
+from Baubles.Colours import Colours
 from Perdy.parser import printXML
 from Perdy.pretty import prettyPrintLn, Style
 from GoldenChild.xpath import *
 
 args=Argue()
 logger=Logger()
+colours=Colours()
 
 #_________________________________________________________________
 @args.command(single=True)
@@ -39,6 +41,7 @@ class OPML(object):
 			text = unicode(text)
 		return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
 
+
 	#.............................................................
 	def _load(self, file, extension=None):
 		(self.doc,self.ctx,self.nsp) = getContextFromFile(file)
@@ -48,11 +51,13 @@ class OPML(object):
 				os.unlink(backup)
 			os.rename(file, backup)
 
+
 	#.............................................................
 	def _save(self, file):
 		with codecs.open(file, 'w', encoding='utf8') as output:
 			printXML(str(self.doc), output = output)
 			
+
 	#.............................................................
 	@args.operation
 	def opml2org(self, file):
@@ -71,6 +76,7 @@ class OPML(object):
 				setAttribute(child,'structure','paragraph')
 				setAttribute(child,'text', paragraph)
 		self._save(file)
+
 
 	#.............................................................
 	def _recurse(self, sheet, parent, row=0, col=0):
@@ -93,6 +99,7 @@ class OPML(object):
 			row = self._recurse(sheet, child, row+1, col+1)
 		return row
 
+
 	#.............................................................
 	@args.operation
 	def opml2excel(self, file):
@@ -108,6 +115,7 @@ class OPML(object):
 		sheet = workbook.add_sheet('opml')
 		self._recurse(sheet, getElement(self.ctx, '/opml/body'))
 		workbook.save(file.replace('.opml','.xls'))
+
 
 	#.............................................................
 	@args.operation
@@ -128,6 +136,7 @@ class OPML(object):
 			note = sio.getvalue()
 			setAttribute(headline, '_note', note)
 		self._save(file)
+
 
 	#.............................................................
 	@args.operation
@@ -151,6 +160,7 @@ class OPML(object):
 					else:
 						continue
 				print('%s%s\n'%(indent, text))
+
 
 	#.............................................................
 	@args.operation
@@ -209,9 +219,11 @@ class OPML(object):
 			with open(file.replace(ext,'.opml'),'w') as output:
 				xmltodict.unparse(opml, output)
 					  
+
 	#.............................................................
 	@args.operation
-	def docxHeadings2opml(self, file):
+	@args.parameter(name="note", short='n', flag=True, help='insert as notes not element')
+	def docxHeadings2opml(self, file, note=False):
 		if not file.endswith('docx'):
 			sys.stderr.write('not a docx file\n')
 			return
@@ -232,31 +244,58 @@ class OPML(object):
 		# stack[-1] is the current parent
 		stack = [ body ]
 
+		patterns = [
+			'Norm', 
+			'Body', 
+		]
+		highlites = { 
+			1: colours.Green, 
+			2: colours.Blue, 
+			3: colours.White 
+		}
+
 		for paragraph in doc.paragraphs:
 			ps = paragraph.style
 			text = paragraph.text.strip().replace('\t',' ').replace('\n',' ')
 
 			if len(text) == 0: continue
 			
-			if ps.name.startswith('Normal'):
-				print('%s   "%s"'%('  '*(level-1), text))
+			if any(map(lambda x: ps.name.startswith(x), patterns)):
+				#sys.stdout.write('%s   "%s\n"'%('  '*(level-1), text))
 				
 				parent = stack[-1]['outline'][-1]
 				if '@_note' not in parent.keys():
 					parent['@_note'] = ''
-				lines = list(filter(lambda x: len(x), parent['@_note'].split('\n')))
-				lines.append(text)
-				parent['@_note'] = '\n'.join(lines)
+
+				if note:
+					lines = list(filter(lambda x: len(x), parent['@_note'].split('\n')))
+					lines.append(text)
+					parent['@_note'] = '\n'.join(lines)
+				else: 
+					outline = {
+						'@text': text,
+					}
+					if 'outline' not in parent.keys():
+						parent['outline'] = []
+					parent['outline'].append(outline)
+					
 				continue
 			
 			if not ps.name.startswith('Heading'):
-				#sys.stderr.write('%s\n'%ps.name)
+				sys.stderr.write(colours.Red)
+				sys.stderr.write('%s\n'%ps.name)
+				sys.stderr.write(colours.Off)
 				continue
 
 			heading = ps.name.replace('Heading ','').split(' ')[0]
 			level=int(heading)
 
-			print('%s %s'%('  '*(level-1), text))
+			if level in highlites.keys():
+				sys.stdout.write(highlites[level])
+
+			sys.stdout.write('%s %s\n'%('  '*(level-1), text))
+
+			sys.stdout.write(colours.Off)
 
 			outline = {
 				'@text': text,
@@ -274,12 +313,12 @@ class OPML(object):
 			stack[-1]['outline'].append(outline)				
 
 			
-		name = '.outline.opml'
+		name = 'outline.opml'
 		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, pretty=True)
 		print(name)
 		
-		name = '.outline.json'
+		name = 'outline.json'
 		with open(name, 'w') as output:
 			json.dump(opml, output, indent=4)
 		print(name)
