@@ -262,8 +262,13 @@ class OPML(object):
 			
 			if any(map(lambda x: ps.name.startswith(x), patterns)):
 				#sys.stdout.write('%s   "%s\n"'%('  '*(level-1), text))
-				
+
+				if not 'outline' in stack[-1].keys():
+					stack[-1]['outline'] = [{
+						'@text': text,
+					}]
 				parent = stack[-1]['outline'][-1]
+				
 				if '@_note' not in parent.keys():
 					parent['@_note'] = ''
 
