@@ -6,6 +6,7 @@ import os,sys,re,json,codecs,xmltodict,unicodedata
 
 from collections import OrderedDict
 from io import StringIO
+from zipfile import ZipFile
 
 from Perdy.pyxbext import directory
 
@@ -221,24 +222,60 @@ class OPML(object):
 					  
 
 	#.............................................................
+	def _createOPML(self, title):
+		opml = OrderedDict([
+			('opml', OrderedDict([
+				('@version', '1.0'),
+				('head', OrderedDict([
+					('title', title),
+				])),
+				('body', OrderedDict([
+				])) 
+			]))
+		])
+		return opml
+	
+		
+	#.............................................................
+	@args.operation
+	def docxComments2opml(self, file):
+		if not file.endswith('docx'):
+			sys.stderr.write('not a docx file\n')
+			return
+
+		path = os.path.expanduser(file)
+		zip = ZipFile(path)
+		xml = zip.read('word/comments.xml').decode('UTF8')
+		doc = XML(*getContextFromString(xml))
+
+		opml = self._createOPML(file)	
+		body = opml['opml']['body']
+		body['outline'] = []
+
+		for comment in getElements(doc.ctx, '//w:comment'):
+			print(comment.content)
+			body['outline'].append({
+				'@text': comment.content,
+			})					
+
+		name = os.path.join(os.path.dirname(path), 'comments.opml')
+		with open(name, 'w') as output:
+			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
+		print(name)			
+
+		
+	#.............................................................
 	@args.operation
 	@args.parameter(name="note", short='n', flag=True, help='insert as notes not element')
 	def docxHeadings2opml(self, file, note=False):
 		if not file.endswith('docx'):
 			sys.stderr.write('not a docx file\n')
 			return
-		doc = Document(file)
 
-		opml = OrderedDict([
-			('opml', OrderedDict([
-				('@version', '1.0'),
-				('head', OrderedDict([
-					('title', file),
-				])),
-				('body', OrderedDict([
-				])) 
-			]))
-		])
+		path =os.path.expanduser(file)
+		doc = Document(path)
+
+		opml = self._createOPML(file)
 		
 		body = opml['opml']['body']
 		# stack[-1] is the current parent
@@ -246,7 +283,8 @@ class OPML(object):
 
 		patterns = [
 			'Norm', 
-			'Body', 
+			'Body',
+			'List',
 		]
 		highlites = { 
 			1: colours.Green, 
@@ -316,14 +354,13 @@ class OPML(object):
 			if 'outline' not in stack[-1].keys():
 				stack[-1]['outline'] = []
 			stack[-1]['outline'].append(outline)				
-
-			
-		name = 'outline.opml'
+		
+		name = os.path.join(os.path.dirname(path), 'outline.opml')
 		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
 		
-		name = 'outline.json'
+		name = os.path.join(os.path.dirname(path), 'outline.json')
 		with open(name, 'w') as output:
 			json.dump(opml, output, indent=4)
 		print(name)
@@ -335,18 +372,11 @@ class OPML(object):
 		if not file.endswith('docx'):
 			sys.stderr.write('not a docx file\n')
 			return
-		doc = Document(file)
 
-		opml = OrderedDict([
-			('opml', OrderedDict([
-				('@version', '1.0'),
-				('head', OrderedDict([
-					('title', file),
-				])),
-				('body', OrderedDict([
-				])) 
-			]))
-		])
+		path = os.path.expanduser(file)
+		doc = Document(path)
+
+		opml = self._createOPML(file)
 		
 		body = opml['opml']['body']
 		# stack[-1] is the current parent
@@ -383,12 +413,12 @@ class OPML(object):
 			stack[-1]['outline'].append(outline)				
 
 			
-		name = file.replace('docx','opml')
+		name = os.path.join(os.path.dirname(path), 'outline.opml')
 		with open(name,'w') as output:
 			xmltodict.unparse(opml, output)
 		print(name)
 
-		name = file.replace('docx','json')
+		name = os.path.join(os.path.dirname(path), 'outline.json')
 		with open(name,'w') as output:
 			json.dump(opml, output, indent=4)
 
