@@ -227,7 +227,7 @@ class OPML(object):
 			('opml', OrderedDict([
 				('@version', '1.0'),
 				('head', OrderedDict([
-					('title', title),
+					('title', title.replace('&','and')),
 				])),
 				('body', OrderedDict([
 				])) 
@@ -256,6 +256,10 @@ class OPML(object):
 			print(comment.content)
 			body['outline'].append({
 				'@text': comment.content,
+				'@_note': '%s %s'%(
+					getAttribute(comment, 'date').replace('T',' ').replace('Z',''),
+					getAttribute(comment, 'author')
+				),
 			})					
 
 		name = os.path.join(os.path.dirname(path), 'comments.opml')
@@ -278,14 +282,10 @@ class OPML(object):
 		opml = self._createOPML(file)
 		
 		body = opml['opml']['body']
-		# stack[-1] is the current parent
+		body['outline'] = []
 		stack = [ body ]
-
-		patterns = [
-			'Norm', 
-			'Body',
-			'List',
-		]
+		level = 0
+		
 		highlites = { 
 			1: colours.Green, 
 			2: colours.Blue, 
@@ -295,75 +295,59 @@ class OPML(object):
 		for paragraph in doc.paragraphs:
 			ps = paragraph.style
 			text = paragraph.text.strip().replace('\t',' ').replace('\n',' ')
+			if len(text) == 0:
+				continue
 
-			if len(text) == 0: continue
-			
-			if any(map(lambda x: ps.name.startswith(x), patterns)):
-				#sys.stdout.write('%s   "%s\n"'%('  '*(level-1), text))
+			parent = stack[-1]
 
-				if not 'outline' in stack[-1].keys():
-					stack[-1]['outline'] = [{
-						'@text': text,
-					}]
-				parent = stack[-1]['outline'][-1]
-				
-				if '@_note' not in parent.keys():
-					parent['@_note'] = ''
+			if ps.name.startswith('Heading'):
+				heading = ps.name.replace('Heading ','').split(' ')[0]
+				level=int(heading)
 
-				if note:
-					lines = list(filter(lambda x: len(x), parent['@_note'].split('\n')))
-					lines.append(text)
-					parent['@_note'] = '\n'.join(lines)
-				else: 
-					outline = {
-						'@text': text,
-					}
-					if 'outline' not in parent.keys():
-						parent['outline'] = []
-					parent['outline'].append(outline)
+				if level in highlites.keys():
+					sys.stdout.write(highlites[level])
+				sys.stdout.write('%s%s\n'%('  '*(level-1), text))
+
+				if level < len(stack):
+					parent = stack.pop()
+				if level > len(stack):
+					parent['outline'] = []
+					stack.append(parent)
+					parent = stack[-1]
 					
-				continue
-			
-			if not ps.name.startswith('Heading'):
-				sys.stderr.write(colours.Red)
-				sys.stderr.write('%s\n'%ps.name)
-				sys.stderr.write(colours.Off)
-				continue
+				parent['@text'] = text
 
-			heading = ps.name.replace('Heading ','').split(' ')[0]
-			level=int(heading)
-
-			if level in highlites.keys():
-				sys.stdout.write(highlites[level])
-
-			sys.stdout.write('%s %s\n'%('  '*(level-1), text))
-
+			else:
+				sys.stdout.write('%s%s\n'%('  '*(level), text))
+				
+				
 			sys.stdout.write(colours.Off)
 
-			outline = {
-				'@text': text,
-			}
+			if 'outline' not in parent.keys():
+				parent['outline'] = []
+			if '@_note' not in parent.keys():
+				parent['@_note'] = ''
 
-			if level > len(stack):
-				parent = stack[-1]['outline'][-1]
-				stack.append(parent)
-
-			if level < len(stack):
-				stack.pop()
-				
-			if 'outline' not in stack[-1].keys():
-				stack[-1]['outline'] = []
-			stack[-1]['outline'].append(outline)				
+			if note:
+				lines = list(filter(lambda x: len(x), parent['@_note'].split('\n')))
+				lines.append(text)
+				parent['@_note'] = '\n'.join(lines)
+			else: 
+				parent['outline'].append({
+					'@text': text,
+				})
+					
 		
 		name = os.path.join(os.path.dirname(path), 'outline.opml')
 		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
-		
-		name = os.path.join(os.path.dirname(path), 'outline.json')
-		with open(name, 'w') as output:
-			json.dump(opml, output, indent=4)
-		print(name)
+
+		if False:
+			name = os.path.join(os.path.dirname(path), 'outline.json')
+			with open(name, 'w') as output:
+				json.dump(opml, output, indent=4)
+			print(name)
 
 		
 	#.............................................................
@@ -418,9 +402,11 @@ class OPML(object):
 			xmltodict.unparse(opml, output)
 		print(name)
 
-		name = os.path.join(os.path.dirname(path), 'outline.json')
-		with open(name,'w') as output:
-			json.dump(opml, output, indent=4)
+		if False:
+			name = os.path.join(os.path.dirname(path), 'outline.json')
+			with open(name,'w') as output:
+				json.dump(opml, output, indent=4)
+			print(name)
 
 
 #_________________________________________________________________

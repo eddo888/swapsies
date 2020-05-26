@@ -8,7 +8,7 @@ pwd = path.abspath(path.dirname(__file__))
 with codecs.open(path.join(pwd, 'README.md'), 'r', encoding='utf8') as input:
 	long_description = input.read()
 
-version='1.8'
+version='1.9'
 	
 setup(
 	name='Swapsies',
@@ -37,18 +37,19 @@ setup(
 		'GoldenChild',
 	],
 	scripts=[
-		"bin/OPML.py",
-		"bin/text2opml.py",
-		"bin/wsdl2file.py",
-		"bin/pdf2text.py",
-		"bin/email2vcard.py",
-		"bin/contact2vcard.py",
-		"bin/xls2dict.py",
-		"bin/COD.py",
-		"bin/tree2xmi.py",
-		"bin/cdata2xml.py",
-		"bin/xls2opml.py",
-		"bin/outlines.py",
-		"bin/xml2cdata.py",
+		'bin/ref2type.py',
+		'bin/OPML.py',
+		'bin/text2opml.py',
+		'bin/wsdl2file.py',
+		'bin/pdf2text.py',
+		'bin/email2vcard.py',
+		'bin/contact2vcard.py',
+		'bin/xls2dict.py',
+		'bin/COD.py',
+		'bin/tree2xmi.py',
+		'bin/cdata2xml.py',
+		'bin/xls2opml.py',
+		'bin/outlines.py',
+		'bin/xml2cdata.py',
 	],
 )
