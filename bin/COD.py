@@ -155,11 +155,15 @@ class COD(object):
 			checked = '[x] ' if state else '[ ] '
 		else:
 			checked = ''
-		_colour = self.xcolours[self.colours[colour]] or ''
+
+		if colour in self.colours.keys():
+			_colour = self.xcolours[self.colours[colour]] or ''
+		else:
+			_colour = ''
 		_font = self.xfonts[self.fonts[font]] or ''
 		print('%s%s%s%s%s%s' % (
 			indent, _font, _colour, checked,
-			childItem.title[0].value(), self.xcolours['Off'], )
+			childItem.title[0].content()[0], self.xcolours['Off'], )
 		)
 		
 		if childItem.notes:
@@ -187,12 +191,12 @@ class COD(object):
 		'''
 		show the cod file
 		'''
-		m = cod.Properties[0].lastModificationTime[0].value()
+		m = cod.Properties.lastModificationTime.value()
 		u = arrow.get(m)
 		a = u.to('local').format('YYYY-MM-DD HH:mm:ss SSS Z')
-		t = cod.Properties[0].title[0].value()
+		t = cod.Properties.title.content()[0]
 		print('%s -> "%s" => %s' % (file, t, a))
-		children = cod.Properties[0].context[0].ChildItem
+		children = cod.Properties.context.ChildItem
 		for childItem in children:
 			self.__show(childItem, checkboxes=checkboxes, shownotes=shownotes)
 			
@@ -218,7 +222,7 @@ class COD(object):
 			for key in list(self.xfonts.keys()):
 				self.xfonts[key] = ''
 
-		with open(file) as input:
+		with open(os.path.expanduser(file)) as input:
 			cod = CreateFromDocument(input.read())
 			self.__convert(file, cod, checkboxes=checkboxes, shownotes=shownotes)
 		return
