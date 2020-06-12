@@ -4,8 +4,6 @@
 
 import sys, os, json, logging, arrow, codecs
 
-sys.path.append('..')
-
 from uuid import uuid4
 
 from Baubles.Logger import Logger
@@ -168,7 +166,9 @@ class COD(object):
 		
 		if childItem.notes:
 			if shownotes:
-				note = childItem.notes[0].value()
+				#directory(childItem.notes[0])
+				
+				note = childItem.notes[0].content()[0]
 				if note != '(null)':
 					print('%s%s  "%s"%s' % (
 						self.xcolours['Teal'], '%s  ' % indent
