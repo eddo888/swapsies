@@ -191,12 +191,12 @@ class COD(object):
 		'''
 		show the cod file
 		'''
-		m = cod.Properties[0].lastModificationTime[0].value()
+		m = cod.Properties.lastModificationTime.value()
 		u = arrow.get(m)
 		a = u.to('local').format('YYYY-MM-DD HH:mm:ss SSS Z')
-		t = cod.Properties[0].title[0].content()[0]
+		t = cod.Properties.title.content()[0]
 		print('%s -> "%s" => %s' % (file, t, a))
-		children = cod.Properties[0].context[0].ChildItem
+		children = cod.Properties.context.ChildItem
 		for childItem in children:
 			self.__show(childItem, checkboxes=checkboxes, shownotes=shownotes)
 			
@@ -240,7 +240,7 @@ class COD(object):
 		constructor=None,
 		parent=None
 	):
-		title = self.__clean(node.title[0].value())
+		title = self.__clean(node.title.value())
 		note = None
 		if node.notes and len(node.notes):
 			note = self.__clean(node.notes[0].value())
@@ -405,7 +405,7 @@ class COD(object):
 		now = arrow.now().to('local').format('YYYY-MM-DD HH:mm:ss SSS')
 
 		cod = self.__createDocument('my outline')
-		root = cod.Properties[0].context[0]
+		root = cod.Properties.context[0]
 		top = self.__addChild('created %s' % now, root)
 
 		self.__addChild('checked', top, checked=True)
@@ -420,10 +420,10 @@ class COD(object):
 		for font in list(self.stonf.keys()):
 			self.__addChild(font, fontChild, font=font)
 
-		m = cod.Properties[0].lastModificationTime[0].value()
+		m = cod.Properties.lastModificationTime.value()
 		u = arrow.get(m)
 		a = u.to('local').format('YYYY-MM-DD HH:mm:ss SSS Z')
-		t = cod.Properties[0].title[0].value()
+		t = cod.Properties.title.value()
 		print('%s -> "%s" => %s' % (file, t, a))
 
 		#directory(cod)

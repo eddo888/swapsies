@@ -1,7 +1,7 @@
 # ./binding.py
 # -*- coding: utf-8 -*-
 # PyXB bindings for NM:e92452c8d3e28a9e27abfc9994d2007779e7f4c9
-# Generated 2020-06-12 11:55:29.191737 by PyXB version 1.2.6 using Python 3.8.2.final.0
+# Generated 2020-06-12 15:58:23.973183 by PyXB version 1.2.6 using Python 3.8.2.final.0
 # Namespace AbsentNamespace0
 
 from __future__ import unicode_literals
@@ -14,7 +14,7 @@ import pyxb.utils.domutils
 import sys
 import pyxb.utils.six as _six
 # Unique identifier for bindings created at the same time
-_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:ca98bda6-ac4f-11ea-a3e4-80e65012546e')
+_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:b9f1435c-ac71-11ea-9e4a-80e65012546e')
 
 # Version of PyXB used to generate the bindings
 _PyXBVersion = '1.2.6'
