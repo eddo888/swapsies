@@ -2,20 +2,20 @@
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:complexType name="Document">
 		<xs:sequence>
-			<xs:element name="Ext" type="Ext"/>
-			<xs:element name="Properties" type="Properties"/>
-			<xs:element name="BaseVersion" type="BaseVersion"/>
-			<xs:element name="VersionNumber" type="VersionNumber"/>
-			<xs:element name="Modified" type="Modified"/>
+			<xs:element name="Ext" type="Ext" minOccurs="0"/>
+			<xs:element name="Properties" type="Properties" minOccurs="0"/>
+			<xs:element name="BaseVersion" type="BaseVersion" minOccurs="0"/>
+			<xs:element name="VersionNumber" type="VersionNumber" minOccurs="0"/>
+			<xs:element name="Modified" type="Modified" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="version" type="xs:string" use="optional"/>
 	</xs:complexType>
 	<xs:complexType name="BaseVersion">
 		<xs:sequence>
-			<xs:element name="VersionNumber" type="VersionNumber"/>
-			<xs:element name="Modified" type="Modified"/>
-			<xs:element name="Ext" type="Ext"/>
-			<xs:element name="Properties" type="Properties"/>
+			<xs:element name="VersionNumber" type="VersionNumber" minOccurs="0"/>
+			<xs:element name="Modified" type="Modified" minOccurs="0"/>
+			<xs:element name="Ext" type="Ext" minOccurs="0"/>
+			<xs:element name="Properties" type="Properties" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="Ext">
@@ -23,26 +23,26 @@
 	</xs:simpleType>
 	<xs:complexType name="Properties">
 		<xs:sequence>
-			<xs:element name="isExpanded" type="isExpanded"/>
-			<xs:element name="isGroup" type="isGroup"/>
-			<xs:element name="title" type="title"/>
-			<xs:element name="password" type="password"/>
-			<xs:element name="markColor" type="markColor"/>
-			<xs:element name="note" type="note"/>
-			<xs:element name="context" type="context"/>
-			<xs:element name="fontSize" type="fontSize"/>
-			<xs:element name="defaultFontStyle" type="defaultFontStyle"/>
-			<xs:element name="defaultColor" type="defaultColor"/>
-			<xs:element name="numerationStyle" type="numerationStyle"/>
-			<xs:element name="lastModificationTime" type="lastModificationTime"/>
-			<xs:element name="showCheckBox" type="showCheckBox"/>
-			<xs:element name="hideCheckedEnements" type="hideCheckedEnements"/>
-			<xs:element name="hideUncheckedEnements" type="hideUncheckedEnements"/>
-			<xs:element name="resizebleLineForTextSize" type="resizebleLineForTextSize"/>
-			<xs:element name="showNotesOnlyForSelectedRow" type="showNotesOnlyForSelectedRow"/>
-			<xs:element name="readOnly" type="readOnly"/>
-			<xs:element name="ID" type="ID"/>
-			<xs:element name="ChildItems" type="ChildItems"/>
+			<xs:element name="isExpanded" type="isExpanded" minOccurs="0"/>
+			<xs:element name="isGroup" type="isGroup" minOccurs="0"/>
+			<xs:element name="title" type="title" minOccurs="0"/>
+			<xs:element name="password" type="password" minOccurs="0"/>
+			<xs:element name="markColor" type="markColor" minOccurs="0"/>
+			<xs:element name="note" type="note" minOccurs="0"/>
+			<xs:element name="context" type="context" minOccurs="0"/>
+			<xs:element name="fontSize" type="fontSize" minOccurs="0"/>
+			<xs:element name="defaultFontStyle" type="defaultFontStyle" minOccurs="0"/>
+			<xs:element name="defaultColor" type="defaultColor" minOccurs="0"/>
+			<xs:element name="numerationStyle" type="numerationStyle" minOccurs="0"/>
+			<xs:element name="lastModificationTime" type="lastModificationTime" minOccurs="0"/>
+			<xs:element name="showCheckBox" type="showCheckBox" minOccurs="0"/>
+			<xs:element name="hideCheckedEnements" type="hideCheckedEnements" minOccurs="0"/>
+			<xs:element name="hideUncheckedEnements" type="hideUncheckedEnements" minOccurs="0"/>
+			<xs:element name="resizebleLineForTextSize" type="resizebleLineForTextSize" minOccurs="0"/>
+			<xs:element name="showNotesOnlyForSelectedRow" type="showNotesOnlyForSelectedRow" minOccurs="0"/>
+			<xs:element name="readOnly" type="readOnly" minOccurs="0"/>
+			<xs:element name="ID" type="ID" minOccurs="0"/>
+			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
@@ -61,15 +61,15 @@
 	</xs:complexType>
 	<xs:complexType name="context">
 		<xs:sequence>
-			<xs:element name="isExpanded" type="isExpanded"/>
-			<xs:element name="isGroup" type="isGroup"/>
-			<xs:element name="title" type="title"/>
-			<xs:element name="completionState" type="completionState"/>
-			<xs:element name="color" type="color"/>
-			<xs:element name="fontStyle" type="fontStyle"/>
-			<xs:element name="ID" type="ID"/>
-			<xs:element name="ChildItems" type="ChildItems"/>
-			<xs:element maxOccurs="unbounded" name="ChildItem" type="ChildItem"/>
+			<xs:element name="isExpanded" type="isExpanded" minOccurs="0"/>
+			<xs:element name="isGroup" type="isGroup" minOccurs="0"/>
+			<xs:element name="title" type="title" minOccurs="0"/>
+			<xs:element name="completionState" type="completionState" minOccurs="0"/>
+			<xs:element name="color" type="color" minOccurs="0"/>
+			<xs:element name="fontStyle" type="fontStyle" minOccurs="0"/>
+			<xs:element name="ID" type="ID" minOccurs="0"/>
+			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+			<xs:element  name="ChildItem" type="ChildItem" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
@@ -199,21 +199,21 @@
 	</xs:simpleType>
 	<xs:complexType name="ChildItems">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="ID" type="ID"/>
+			<xs:element   name="ID" type="ID" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ChildItem">
-		<xs:choice maxOccurs="unbounded" minOccurs="0">
-			<xs:element name="ChildItem" type="ChildItem"/>
-			<xs:element name="ChildItems" type="ChildItems"/>
-			<xs:element name="ID" type="ID"/>
-			<xs:element name="color" type="color"/>
-			<xs:element name="completionState" type="completionState"/>
-			<xs:element name="fontStyle" type="fontStyle"/>
-			<xs:element name="isExpanded" type="isExpanded"/>
-			<xs:element name="isGroup" type="isGroup"/>
-			<xs:element name="title" type="title"/>
-			<xs:element name="notes" type="notes"/>
+		<xs:choice  >
+			<xs:element name="ChildItem" type="ChildItem" minOccurs="0"/>
+			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
+			<xs:element name="ID" type="ID" minOccurs="0"/>
+			<xs:element name="color" type="color" minOccurs="0"/>
+			<xs:element name="completionState" type="completionState" minOccurs="0"/>
+			<xs:element name="fontStyle" type="fontStyle" minOccurs="0"/>
+			<xs:element name="isExpanded" type="isExpanded" minOccurs="0"/>
+			<xs:element name="isGroup" type="isGroup" minOccurs="0"/>
+			<xs:element name="title" type="title" minOccurs="0"/>
+			<xs:element name="notes" type="notes" minOccurs="0"/>
 		</xs:choice>
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
