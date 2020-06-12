@@ -2,30 +2,30 @@
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="Document">
         <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:sequence>
                 <xs:element ref="Ext"/>
                 <xs:element ref="Properties"/>
                 <xs:element ref="BaseVersion"/>
                 <xs:element ref="VersionNumber"/>
                 <xs:element ref="Modified"/>
-            </xs:choice>
+            </xs:sequence>
             <xs:attribute name="version" type="xs:string" use="optional"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="BaseVersion">
         <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:sequence>
                 <xs:element ref="VersionNumber"/>
                 <xs:element ref="Modified"/>
                 <xs:element ref="Ext"/>
                 <xs:element ref="Properties"/>
-            </xs:choice>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
     <xs:element name="Ext" type="xs:string"/>
     <xs:element name="Properties">
         <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:sequence>
                 <xs:element ref="isExpanded"/>
                 <xs:element ref="isGroup"/>
                 <xs:element ref="title"/>
@@ -46,7 +46,7 @@
                 <xs:element ref="readOnly"/>
                 <xs:element ref="ID"/>
                 <xs:element ref="ChildItems"/>
-            </xs:choice>
+            </xs:sequence>
             <xs:attribute name="className" type="xs:NCName" use="required"/>
         </xs:complexType>
     </xs:element>
@@ -71,7 +71,7 @@
     </xs:element>
     <xs:element name="context">
         <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:sequence>
                 <xs:element ref="isExpanded"/>
                 <xs:element ref="isGroup"/>
                 <xs:element ref="title"/>
@@ -81,7 +81,7 @@
                 <xs:element ref="ID"/>
                 <xs:element ref="ChildItems"/>
                 <xs:element maxOccurs="unbounded" ref="ChildItem"/>
-            </xs:choice>
+            </xs:sequence>
             <xs:attribute name="className" type="xs:NCName" use="required"/>
         </xs:complexType>
     </xs:element>
@@ -239,9 +239,9 @@
     <xs:element name="ID" type="xs:string"/>
     <xs:element name="ChildItems">
         <xs:complexType>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:sequence>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="ID"/>
-            </xs:choice>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
     <xs:element name="ChildItem">

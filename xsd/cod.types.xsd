@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:complexType name="Document">
-		<xs:choice maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence>
 			<xs:element name="Ext" type="Ext"/>
 			<xs:element name="Properties" type="Properties"/>
 			<xs:element name="BaseVersion" type="BaseVersion"/>
 			<xs:element name="VersionNumber" type="VersionNumber"/>
 			<xs:element name="Modified" type="Modified"/>
-		</xs:choice>
+		</xs:sequence>
 		<xs:attribute name="version" type="xs:string" use="optional"/>
 	</xs:complexType>
 	<xs:complexType name="BaseVersion">
-		<xs:choice maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence>
 			<xs:element name="VersionNumber" type="VersionNumber"/>
 			<xs:element name="Modified" type="Modified"/>
 			<xs:element name="Ext" type="Ext"/>
 			<xs:element name="Properties" type="Properties"/>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="Ext">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:complexType name="Properties">
-		<xs:choice maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence>
 			<xs:element name="isExpanded" type="isExpanded"/>
 			<xs:element name="isGroup" type="isGroup"/>
 			<xs:element name="title" type="title"/>
@@ -43,7 +43,7 @@
 			<xs:element name="readOnly" type="readOnly"/>
 			<xs:element name="ID" type="ID"/>
 			<xs:element name="ChildItems" type="ChildItems"/>
-		</xs:choice>
+		</xs:sequence>
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
 	<xs:complexType mixed="true" name="password">
@@ -60,7 +60,7 @@
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="context">
-		<xs:choice maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence>
 			<xs:element name="isExpanded" type="isExpanded"/>
 			<xs:element name="isGroup" type="isGroup"/>
 			<xs:element name="title" type="title"/>
@@ -70,7 +70,7 @@
 			<xs:element name="ID" type="ID"/>
 			<xs:element name="ChildItems" type="ChildItems"/>
 			<xs:element maxOccurs="unbounded" name="ChildItem" type="ChildItem"/>
-		</xs:choice>
+		</xs:sequence>
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="fontSize">
@@ -198,9 +198,9 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:complexType name="ChildItems">
-		<xs:choice maxOccurs="unbounded" minOccurs="0">
+		<xs:sequence>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ID" type="ID"/>
-		</xs:choice>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ChildItem">
 		<xs:choice maxOccurs="unbounded" minOccurs="0">
