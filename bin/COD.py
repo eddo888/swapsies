@@ -30,7 +30,6 @@ from Swapsies.CloudOutlinerXSD import *
 @args.command(single=True)
 class COD(object):
 
-
 	#........................................................
 	def __init__(self):
 		'''
