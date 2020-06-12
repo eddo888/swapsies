@@ -69,7 +69,7 @@
 			<xs:element name="fontStyle" type="fontStyle" minOccurs="0"/>
 			<xs:element name="ID" type="ID" minOccurs="0"/>
 			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
-			<xs:element  name="ChildItem" type="ChildItem" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded" name="ChildItem" type="ChildItem" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="className" type="xs:NCName" use="required"/>
 	</xs:complexType>
@@ -199,11 +199,11 @@
 	</xs:simpleType>
 	<xs:complexType name="ChildItems">
 		<xs:sequence>
-			<xs:element   name="ID" type="ID" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded"  name="ID" type="ID" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ChildItem">
-		<xs:choice  >
+		<xs:choice maxOccurs="unbounded" >
 			<xs:element name="ChildItem" type="ChildItem" minOccurs="0"/>
 			<xs:element name="ChildItems" type="ChildItems" minOccurs="0"/>
 			<xs:element name="ID" type="ID" minOccurs="0"/>

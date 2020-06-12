@@ -1,7 +1,7 @@
 # ./binding.py
 # -*- coding: utf-8 -*-
 # PyXB bindings for NM:e92452c8d3e28a9e27abfc9994d2007779e7f4c9
-# Generated 2020-06-12 16:09:06.163162 by PyXB version 1.2.6 using Python 3.8.2.final.0
+# Generated 2020-06-12 16:15:02.964521 by PyXB version 1.2.6 using Python 3.8.2.final.0
 # Namespace AbsentNamespace0
 
 from __future__ import unicode_literals
@@ -14,7 +14,7 @@ import pyxb.utils.domutils
 import sys
 import pyxb.utils.six as _six
 # Unique identifier for bindings created at the same time
-_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:38b742ee-ac73-11ea-b0d7-80e65012546e')
+_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:0d62e2be-ac74-11ea-a069-80e65012546e')
 
 # Version of PyXB used to generate the bindings
 _PyXBVersion = '1.2.6'
@@ -588,7 +588,7 @@ class context (pyxb.binding.basis.complexTypeDefinition):
 
     
     # Element ChildItem uses Python identifier ChildItem
-    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_context_ChildItem', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3), )
+    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_context_ChildItem', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3), )
 
     
     ChildItem = property(__ChildItem.value, __ChildItem.set, None, None)
@@ -1125,7 +1125,7 @@ class ChildItems (pyxb.binding.basis.complexTypeDefinition):
     # Base type is pyxb.binding.datatypes.anyType
     
     # Element ID uses Python identifier ID
-    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_ChildItems_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 202, 3), )
+    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_ChildItems_ID', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 202, 3), )
 
     
     ID = property(__ID.value, __ID.set, None, None)
@@ -1153,70 +1153,70 @@ class ChildItem (pyxb.binding.basis.complexTypeDefinition):
     # Base type is pyxb.binding.datatypes.anyType
     
     # Element ChildItem uses Python identifier ChildItem
-    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_ChildItem_ChildItem', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3), )
+    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_ChildItem_ChildItem', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3), )
 
     
     ChildItem = property(__ChildItem.value, __ChildItem.set, None, None)
 
     
     # Element ChildItems uses Python identifier ChildItems
-    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_ChildItem_ChildItems', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 208, 3), )
+    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_ChildItem_ChildItems', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 208, 3), )
 
     
     ChildItems = property(__ChildItems.value, __ChildItems.set, None, None)
 
     
     # Element ID uses Python identifier ID
-    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_ChildItem_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 209, 3), )
+    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_ChildItem_ID', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 209, 3), )
 
     
     ID = property(__ID.value, __ID.set, None, None)
 
     
     # Element color uses Python identifier color
-    __color = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'color'), 'color', '__AbsentNamespace0_ChildItem_color', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 210, 3), )
+    __color = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'color'), 'color', '__AbsentNamespace0_ChildItem_color', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 210, 3), )
 
     
     color = property(__color.value, __color.set, None, None)
 
     
     # Element completionState uses Python identifier completionState
-    __completionState = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'completionState'), 'completionState', '__AbsentNamespace0_ChildItem_completionState', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 211, 3), )
+    __completionState = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'completionState'), 'completionState', '__AbsentNamespace0_ChildItem_completionState', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 211, 3), )
 
     
     completionState = property(__completionState.value, __completionState.set, None, None)
 
     
     # Element fontStyle uses Python identifier fontStyle
-    __fontStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'fontStyle'), 'fontStyle', '__AbsentNamespace0_ChildItem_fontStyle', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 212, 3), )
+    __fontStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'fontStyle'), 'fontStyle', '__AbsentNamespace0_ChildItem_fontStyle', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 212, 3), )
 
     
     fontStyle = property(__fontStyle.value, __fontStyle.set, None, None)
 
     
     # Element isExpanded uses Python identifier isExpanded
-    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_ChildItem_isExpanded', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 213, 3), )
+    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_ChildItem_isExpanded', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 213, 3), )
 
     
     isExpanded = property(__isExpanded.value, __isExpanded.set, None, None)
 
     
     # Element isGroup uses Python identifier isGroup
-    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_ChildItem_isGroup', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 214, 3), )
+    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_ChildItem_isGroup', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 214, 3), )
 
     
     isGroup = property(__isGroup.value, __isGroup.set, None, None)
 
     
     # Element title uses Python identifier title
-    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_ChildItem_title', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3), )
+    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_ChildItem_title', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3), )
 
     
     title = property(__title.value, __title.set, None, None)
 
     
     # Element notes uses Python identifier notes
-    __notes = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'notes'), 'notes', '__AbsentNamespace0_ChildItem_notes', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3), )
+    __notes = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'notes'), 'notes', '__AbsentNamespace0_ChildItem_notes', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3), )
 
     
     notes = property(__notes.value, __notes.set, None, None)
@@ -2182,7 +2182,7 @@ def _BuildAutomaton_5 ():
     counters.add(cc_6)
     cc_7 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3))
     counters.add(cc_7)
-    cc_8 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3))
+    cc_8 = fac.CounterCondition(min=0, max=None, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3))
     counters.add(cc_8)
     states = []
     final_update = set()
@@ -2367,7 +2367,7 @@ def _BuildAutomaton_7 ():
     import pyxb.utils.fac as fac
 
     counters = set()
-    cc_0 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 202, 3))
+    cc_0 = fac.CounterCondition(min=0, max=None, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 202, 3))
     counters.add(cc_0)
     states = []
     final_update = set()
@@ -2486,42 +2486,242 @@ def _BuildAutomaton_8 ():
     transitions = []
     transitions.append(fac.Transition(st_0, [
         fac.UpdateInstruction(cc_0, True) ]))
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_0, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_0, False) ]))
     st_0._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_1, False) ]))
     transitions.append(fac.Transition(st_1, [
         fac.UpdateInstruction(cc_1, True) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_1, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_1, False) ]))
     st_1._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_2, False) ]))
     transitions.append(fac.Transition(st_2, [
         fac.UpdateInstruction(cc_2, True) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_2, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_2, False) ]))
     st_2._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_3, False) ]))
     transitions.append(fac.Transition(st_3, [
         fac.UpdateInstruction(cc_3, True) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_3, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_3, False) ]))
     st_3._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_4, False) ]))
     transitions.append(fac.Transition(st_4, [
         fac.UpdateInstruction(cc_4, True) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_4, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_4, False) ]))
     st_4._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_5, False) ]))
     transitions.append(fac.Transition(st_5, [
         fac.UpdateInstruction(cc_5, True) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_5, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_5, False) ]))
     st_5._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_6, False) ]))
     transitions.append(fac.Transition(st_6, [
         fac.UpdateInstruction(cc_6, True) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_6, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_6, False) ]))
     st_6._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_7, False) ]))
     transitions.append(fac.Transition(st_7, [
         fac.UpdateInstruction(cc_7, True) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_7, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_7, False) ]))
     st_7._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_8, False) ]))
     transitions.append(fac.Transition(st_8, [
         fac.UpdateInstruction(cc_8, True) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_8, False) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_8, False) ]))
     st_8._set_transitionSet(transitions)
     transitions = []
+    transitions.append(fac.Transition(st_0, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_1, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_2, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_3, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_4, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_5, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_6, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_7, [
+        fac.UpdateInstruction(cc_9, False) ]))
+    transitions.append(fac.Transition(st_8, [
+        fac.UpdateInstruction(cc_9, False) ]))
     transitions.append(fac.Transition(st_9, [
         fac.UpdateInstruction(cc_9, True) ]))
+    transitions.append(fac.Transition(st_9, [
+        fac.UpdateInstruction(cc_9, False) ]))
     st_9._set_transitionSet(transitions)
     return fac.Automaton(states, counters, True, containing_state=None)
 ChildItem._Automaton = _BuildAutomaton_8()

@@ -191,11 +191,12 @@ class COD(object):
 		'''
 		show the cod file
 		'''
-		m = cod.Properties.lastModificationTime.value()
-		u = arrow.get(m)
-		a = u.to('local').format('YYYY-MM-DD HH:mm:ss SSS Z')
-		t = cod.Properties.title.content()[0]
-		print('%s -> "%s" => %s' % (file, t, a))
+		if cod.Properties.lastModificationTime:
+			m = cod.Properties.lastModificationTime.value()
+			u = arrow.get(m)
+			a = u.to('local').format('YYYY-MM-DD HH:mm:ss SSS Z')
+			t = cod.Properties.title.content()[0]
+			print('%s -> "%s" => %s' % (file, t, a))
 		children = cod.Properties.context.ChildItem
 		for childItem in children:
 			self.__show(childItem, checkboxes=checkboxes, shownotes=shownotes)
