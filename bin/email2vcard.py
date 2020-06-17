@@ -32,7 +32,7 @@ if args.verbose:
 
 
 def convert(fqn):
-	fqn = fqn.lstrip(' ').rstrip(' ')
+	fqn = fqn.strip()
 	triangles = re.compile('^([^<]+) <([^>]+)>$')
 	match = triangles.match(fqn)
 	if match:
