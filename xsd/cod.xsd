@@ -247,7 +247,7 @@
     <xs:element name="ChildItem">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="ChildItem"/>
+                <xs:element ref="ChildItem" maxOccurs="unbounded"/>
                 <xs:element ref="ChildItems"/>
                 <xs:element ref="ID"/>
                 <xs:element ref="color"/>

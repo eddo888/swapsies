@@ -1,7 +1,7 @@
 # ./binding.py
 # -*- coding: utf-8 -*-
 # PyXB bindings for NM:e92452c8d3e28a9e27abfc9994d2007779e7f4c9
-# Generated 2020-06-19 16:04:19.169169 by PyXB version 1.2.6 using Python 3.8.2.final.0
+# Generated 2020-06-19 16:18:58.747653 by PyXB version 1.2.6 using Python 3.8.2.final.0
 # Namespace AbsentNamespace0
 
 from __future__ import unicode_literals
@@ -14,7 +14,7 @@ import pyxb.utils.domutils
 import sys
 import pyxb.utils.six as _six
 # Unique identifier for bindings created at the same time
-_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:b685b6cc-b1f2-11ea-b934-80e65012546e')
+_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:c2ca7eb6-b1f4-11ea-a8b2-80e65012546e')
 
 # Version of PyXB used to generate the bindings
 _PyXBVersion = '1.2.6'
@@ -1153,7 +1153,7 @@ class ChildItem (pyxb.binding.basis.complexTypeDefinition):
     # Base type is pyxb.binding.datatypes.anyType
     
     # Element ChildItem uses Python identifier ChildItem
-    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_ChildItem_ChildItem', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3), )
+    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_ChildItem_ChildItem', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3), )
 
     
     ChildItem = property(__ChildItem.value, __ChildItem.set, None, None)
@@ -2412,7 +2412,7 @@ def _BuildAutomaton_8 ():
     import pyxb.utils.fac as fac
 
     counters = set()
-    cc_0 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3))
+    cc_0 = fac.CounterCondition(min=0, max=None, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3))
     counters.add(cc_0)
     cc_1 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 208, 3))
     counters.add(cc_1)

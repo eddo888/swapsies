@@ -204,7 +204,7 @@
 	</xs:complexType>
 	<xs:complexType name="ChildItem">
 		<xs:sequence>
-			<xs:element minOccurs="0" name="ChildItem" type="ChildItem"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ChildItem" type="ChildItem"/>
 			<xs:element minOccurs="0" name="ChildItems" type="ChildItems"/>
 			<xs:element minOccurs="0" name="ID" type="ID"/>
 			<xs:element minOccurs="0" name="color" type="color"/>

@@ -146,9 +146,9 @@ class COD(object):
 		'''
 		show a single item
 		'''
-		font = childItem.fontStyle[0].value()
-		colour = childItem.color[0].value()
-		state = childItem.completionState[0].value() == 3
+		font = childItem.fontStyle.value()
+		colour = childItem.color.value()
+		state = childItem.completionState.value() == 3
 		if checkboxes:
 			checked = '[x] ' if state else '[ ] '
 		else:
@@ -161,7 +161,7 @@ class COD(object):
 		_font = self.xfonts[self.fonts[font]] or ''
 		print('%s%s%s%s%s%s' % (
 			indent, _font, _colour, checked,
-			childItem.title[0].content()[0], self.xcolours['Off'], )
+			childItem.title.content()[0], self.xcolours['Off'], )
 		)
 		
 		if childItem.notes:
@@ -209,7 +209,7 @@ class COD(object):
 			'Document',
 			'BaseVersion',
 			'Properties',
-			'content',
+			'context',
 			'ChildItem',
 		]
 
