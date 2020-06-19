@@ -201,14 +201,9 @@ class COD(object):
 		for childItem in children:
 			self.__show(childItem, checkboxes=checkboxes, shownotes=shownotes)
 			
-	@args.operation
-	def reorganize(self, file):
-		if not file.endswith('cod'):
-			sys.stderr.write('not a cod file\n')
-			return
-		print(file)
-		
-		cod = XML(*getContextFromFile(file))
+
+	def _reorganize(self, cod, node):
+		#print('%s, %s'%(node.name, type(node)))
 
 		parents = [
 			'Document',
@@ -218,18 +213,32 @@ class COD(object):
 			'ChildItem',
 		]
 
-		for parent in parents:
-			for element in getElements(cod.ctx, '//%s'%parent):
-				print(element.name)
-				# sort the children
-				children = dict()
-				for child in getElements(cod.ctx, '*', element):
-					print('\t%s[%s]'%(child.name,child.type))
-					children[child.name] = child
-					#child.unlinkNode()
-				#for child in sorted(children.keys()):
-					#element.addChild(child)
+		if node.name in parents:
+			children = dict()
 
+			for child in getElements(cod.ctx, '*', node):
+				#print('\t%s, %s'%(child.name, type(child)))
+				children[child.name] = child
+				child.unlinkNode()
+			for name in sorted(children.keys()):
+				node.addChild(children[name])
+		
+		for element in getElements(cod.ctx, '*', node):
+			self._reorganize(cod, element)
+				
+
+				
+	@args.operation
+	def reorganize(self, file):
+		if not file.endswith('cod'):
+			sys.stderr.write('not a cod file\n')
+			return
+		#print(file)
+		
+		cod = XML(*getContextFromFile(file))
+
+		self._reorganize(cod, cod.doc.getRootElement())
+		
 		with open(file, 'w') as output:
 			printXML(str(cod.doc), output=output)
 		
@@ -249,6 +258,8 @@ class COD(object):
 		'''
 		load a cod file and display
 		'''
+		self.reorganize(file)
+		
 		if blackAndWhite:
 			for key in list(self.xcolours.keys()):
 				self.xcolours[key] = ''
