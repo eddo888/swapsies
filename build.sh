@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-cp ../../eddo888/Outliner/xsd/cod.xsd xsd/
-#perl -pe 's/xs:sequence>/xs:choice>/;s/<xs:choice>/<xs:choice minOccurs="0" maxOccurs="unbounded">/' -i xsd/cod.xsd 
-
+#cp ../../eddo888/Outliner/xsd/cod.xsd xsd/
 bin/ref2type.py xsd/cod.xsd Document
-perl -pe 'if (!/name="Document"/) { s/minOccurs="0"//g;s/<(xs:element.*)\/>/<$1 minOccurs="0"\/>/ }' -i xsd/cod.types.xsd
+./organize.py xsd/cod.types.xsd
 
 pyxbgen xsd/cod.types.xsd
 mv binding.py Swapsies/CloudOutlinerXSD.py

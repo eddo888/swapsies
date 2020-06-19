@@ -349,7 +349,7 @@ class OPML(object):
 				json.dump(opml, output, indent=4)
 			print(name)
 
-		
+
 	#.............................................................
 	@args.operation
 	def docxIndented2opml(self, file):

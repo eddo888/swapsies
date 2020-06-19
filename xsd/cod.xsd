@@ -246,7 +246,7 @@
     </xs:element>
     <xs:element name="ChildItem">
         <xs:complexType>
-            <xs:choice maxOccurs="unbounded" minOccurs="0">
+            <xs:sequence>
                 <xs:element ref="ChildItem"/>
                 <xs:element ref="ChildItems"/>
                 <xs:element ref="ID"/>
@@ -257,7 +257,7 @@
                 <xs:element ref="isGroup"/>
                 <xs:element ref="title"/>
                 <xs:element ref="notes"/>
-            </xs:choice>
+            </xs:sequence>
             <xs:attribute name="className" type="xs:NCName" use="required"/>
         </xs:complexType>
     </xs:element>

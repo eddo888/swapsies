@@ -1,7 +1,7 @@
 # ./binding.py
 # -*- coding: utf-8 -*-
 # PyXB bindings for NM:e92452c8d3e28a9e27abfc9994d2007779e7f4c9
-# Generated 2020-06-12 16:15:02.964521 by PyXB version 1.2.6 using Python 3.8.2.final.0
+# Generated 2020-06-19 15:14:47.359447 by PyXB version 1.2.6 using Python 3.8.2.final.0
 # Namespace AbsentNamespace0
 
 from __future__ import unicode_literals
@@ -14,7 +14,7 @@ import pyxb.utils.domutils
 import sys
 import pyxb.utils.six as _six
 # Unique identifier for bindings created at the same time
-_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:0d62e2be-ac74-11ea-a069-80e65012546e')
+_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:cb2fb2a0-b1eb-11ea-a2db-80e65012546e')
 
 # Version of PyXB used to generate the bindings
 _PyXBVersion = '1.2.6'
@@ -136,39 +136,39 @@ class Document_ (pyxb.binding.basis.complexTypeDefinition):
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
     
-    # Element Ext uses Python identifier Ext
-    __Ext = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Ext'), 'Ext', '__AbsentNamespace0_Document__Ext', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 5, 3), )
-
-    
-    Ext = property(__Ext.value, __Ext.set, None, None)
-
-    
-    # Element Properties uses Python identifier Properties
-    __Properties = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Properties'), 'Properties', '__AbsentNamespace0_Document__Properties', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 6, 3), )
-
-    
-    Properties = property(__Properties.value, __Properties.set, None, None)
-
-    
     # Element BaseVersion uses Python identifier BaseVersion
-    __BaseVersion = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'BaseVersion'), 'BaseVersion', '__AbsentNamespace0_Document__BaseVersion', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 7, 3), )
+    __BaseVersion = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'BaseVersion'), 'BaseVersion', '__AbsentNamespace0_Document__BaseVersion', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 5, 3), )
 
     
     BaseVersion = property(__BaseVersion.value, __BaseVersion.set, None, None)
 
     
-    # Element VersionNumber uses Python identifier VersionNumber
-    __VersionNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VersionNumber'), 'VersionNumber', '__AbsentNamespace0_Document__VersionNumber', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 8, 3), )
+    # Element Ext uses Python identifier Ext
+    __Ext = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Ext'), 'Ext', '__AbsentNamespace0_Document__Ext', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 6, 3), )
 
     
-    VersionNumber = property(__VersionNumber.value, __VersionNumber.set, None, None)
+    Ext = property(__Ext.value, __Ext.set, None, None)
 
     
     # Element Modified uses Python identifier Modified
-    __Modified = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Modified'), 'Modified', '__AbsentNamespace0_Document__Modified', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 9, 3), )
+    __Modified = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Modified'), 'Modified', '__AbsentNamespace0_Document__Modified', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 7, 3), )
 
     
     Modified = property(__Modified.value, __Modified.set, None, None)
+
+    
+    # Element Properties uses Python identifier Properties
+    __Properties = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Properties'), 'Properties', '__AbsentNamespace0_Document__Properties', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 8, 3), )
+
+    
+    Properties = property(__Properties.value, __Properties.set, None, None)
+
+    
+    # Element VersionNumber uses Python identifier VersionNumber
+    __VersionNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VersionNumber'), 'VersionNumber', '__AbsentNamespace0_Document__VersionNumber', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 9, 3), )
+
+    
+    VersionNumber = property(__VersionNumber.value, __VersionNumber.set, None, None)
 
     
     # Attribute version uses Python identifier version
@@ -179,11 +179,11 @@ class Document_ (pyxb.binding.basis.complexTypeDefinition):
     version = property(__version.value, __version.set, None, None)
 
     _ElementMap.update({
-        __Ext.name() : __Ext,
-        __Properties.name() : __Properties,
         __BaseVersion.name() : __BaseVersion,
-        __VersionNumber.name() : __VersionNumber,
-        __Modified.name() : __Modified
+        __Ext.name() : __Ext,
+        __Modified.name() : __Modified,
+        __Properties.name() : __Properties,
+        __VersionNumber.name() : __VersionNumber
     })
     _AttributeMap.update({
         __version.name() : __version
@@ -204,11 +204,11 @@ class BaseVersion (pyxb.binding.basis.complexTypeDefinition):
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
     
-    # Element VersionNumber uses Python identifier VersionNumber
-    __VersionNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VersionNumber'), 'VersionNumber', '__AbsentNamespace0_BaseVersion_VersionNumber', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 15, 3), )
+    # Element Ext uses Python identifier Ext
+    __Ext = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Ext'), 'Ext', '__AbsentNamespace0_BaseVersion_Ext', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 15, 3), )
 
     
-    VersionNumber = property(__VersionNumber.value, __VersionNumber.set, None, None)
+    Ext = property(__Ext.value, __Ext.set, None, None)
 
     
     # Element Modified uses Python identifier Modified
@@ -218,24 +218,24 @@ class BaseVersion (pyxb.binding.basis.complexTypeDefinition):
     Modified = property(__Modified.value, __Modified.set, None, None)
 
     
-    # Element Ext uses Python identifier Ext
-    __Ext = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Ext'), 'Ext', '__AbsentNamespace0_BaseVersion_Ext', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 17, 3), )
-
-    
-    Ext = property(__Ext.value, __Ext.set, None, None)
-
-    
     # Element Properties uses Python identifier Properties
-    __Properties = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Properties'), 'Properties', '__AbsentNamespace0_BaseVersion_Properties', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 18, 3), )
+    __Properties = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'Properties'), 'Properties', '__AbsentNamespace0_BaseVersion_Properties', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 17, 3), )
 
     
     Properties = property(__Properties.value, __Properties.set, None, None)
 
+    
+    # Element VersionNumber uses Python identifier VersionNumber
+    __VersionNumber = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'VersionNumber'), 'VersionNumber', '__AbsentNamespace0_BaseVersion_VersionNumber', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 18, 3), )
+
+    
+    VersionNumber = property(__VersionNumber.value, __VersionNumber.set, None, None)
+
     _ElementMap.update({
-        __VersionNumber.name() : __VersionNumber,
-        __Modified.name() : __Modified,
         __Ext.name() : __Ext,
-        __Properties.name() : __Properties
+        __Modified.name() : __Modified,
+        __Properties.name() : __Properties,
+        __VersionNumber.name() : __VersionNumber
     })
     _AttributeMap.update({
         
@@ -256,144 +256,144 @@ class Properties (pyxb.binding.basis.complexTypeDefinition):
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
     
-    # Element isExpanded uses Python identifier isExpanded
-    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_Properties_isExpanded', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 26, 3), )
+    # Element ChildItems uses Python identifier ChildItems
+    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_Properties_ChildItems', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 26, 3), )
 
     
-    isExpanded = property(__isExpanded.value, __isExpanded.set, None, None)
+    ChildItems = property(__ChildItems.value, __ChildItems.set, None, None)
 
     
-    # Element isGroup uses Python identifier isGroup
-    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_Properties_isGroup', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 27, 3), )
+    # Element ID uses Python identifier ID
+    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_Properties_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 27, 3), )
 
     
-    isGroup = property(__isGroup.value, __isGroup.set, None, None)
-
-    
-    # Element title uses Python identifier title
-    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_Properties_title', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 28, 3), )
-
-    
-    title = property(__title.value, __title.set, None, None)
-
-    
-    # Element password uses Python identifier password
-    __password = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'password'), 'password', '__AbsentNamespace0_Properties_password', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 29, 3), )
-
-    
-    password = property(__password.value, __password.set, None, None)
-
-    
-    # Element markColor uses Python identifier markColor
-    __markColor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'markColor'), 'markColor', '__AbsentNamespace0_Properties_markColor', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 30, 3), )
-
-    
-    markColor = property(__markColor.value, __markColor.set, None, None)
-
-    
-    # Element note uses Python identifier note
-    __note = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'note'), 'note', '__AbsentNamespace0_Properties_note', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 31, 3), )
-
-    
-    note = property(__note.value, __note.set, None, None)
+    ID = property(__ID.value, __ID.set, None, None)
 
     
     # Element context uses Python identifier context
-    __context = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'context'), 'context', '__AbsentNamespace0_Properties_context', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 32, 3), )
+    __context = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'context'), 'context', '__AbsentNamespace0_Properties_context', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 28, 3), )
 
     
     context = property(__context.value, __context.set, None, None)
 
     
-    # Element fontSize uses Python identifier fontSize
-    __fontSize = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'fontSize'), 'fontSize', '__AbsentNamespace0_Properties_fontSize', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 33, 3), )
-
-    
-    fontSize = property(__fontSize.value, __fontSize.set, None, None)
-
-    
-    # Element defaultFontStyle uses Python identifier defaultFontStyle
-    __defaultFontStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'defaultFontStyle'), 'defaultFontStyle', '__AbsentNamespace0_Properties_defaultFontStyle', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 34, 3), )
-
-    
-    defaultFontStyle = property(__defaultFontStyle.value, __defaultFontStyle.set, None, None)
-
-    
     # Element defaultColor uses Python identifier defaultColor
-    __defaultColor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'defaultColor'), 'defaultColor', '__AbsentNamespace0_Properties_defaultColor', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 35, 3), )
+    __defaultColor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'defaultColor'), 'defaultColor', '__AbsentNamespace0_Properties_defaultColor', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 29, 3), )
 
     
     defaultColor = property(__defaultColor.value, __defaultColor.set, None, None)
 
     
-    # Element numerationStyle uses Python identifier numerationStyle
-    __numerationStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'numerationStyle'), 'numerationStyle', '__AbsentNamespace0_Properties_numerationStyle', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 36, 3), )
+    # Element defaultFontStyle uses Python identifier defaultFontStyle
+    __defaultFontStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'defaultFontStyle'), 'defaultFontStyle', '__AbsentNamespace0_Properties_defaultFontStyle', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 30, 3), )
 
     
-    numerationStyle = property(__numerationStyle.value, __numerationStyle.set, None, None)
+    defaultFontStyle = property(__defaultFontStyle.value, __defaultFontStyle.set, None, None)
 
     
-    # Element lastModificationTime uses Python identifier lastModificationTime
-    __lastModificationTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'lastModificationTime'), 'lastModificationTime', '__AbsentNamespace0_Properties_lastModificationTime', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 37, 3), )
+    # Element fontSize uses Python identifier fontSize
+    __fontSize = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'fontSize'), 'fontSize', '__AbsentNamespace0_Properties_fontSize', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 31, 3), )
 
     
-    lastModificationTime = property(__lastModificationTime.value, __lastModificationTime.set, None, None)
-
-    
-    # Element showCheckBox uses Python identifier showCheckBox
-    __showCheckBox = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'showCheckBox'), 'showCheckBox', '__AbsentNamespace0_Properties_showCheckBox', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 38, 3), )
-
-    
-    showCheckBox = property(__showCheckBox.value, __showCheckBox.set, None, None)
+    fontSize = property(__fontSize.value, __fontSize.set, None, None)
 
     
     # Element hideCheckedEnements uses Python identifier hideCheckedEnements
-    __hideCheckedEnements = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'hideCheckedEnements'), 'hideCheckedEnements', '__AbsentNamespace0_Properties_hideCheckedEnements', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 39, 3), )
+    __hideCheckedEnements = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'hideCheckedEnements'), 'hideCheckedEnements', '__AbsentNamespace0_Properties_hideCheckedEnements', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 32, 3), )
 
     
     hideCheckedEnements = property(__hideCheckedEnements.value, __hideCheckedEnements.set, None, None)
 
     
     # Element hideUncheckedEnements uses Python identifier hideUncheckedEnements
-    __hideUncheckedEnements = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'hideUncheckedEnements'), 'hideUncheckedEnements', '__AbsentNamespace0_Properties_hideUncheckedEnements', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 40, 3), )
+    __hideUncheckedEnements = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'hideUncheckedEnements'), 'hideUncheckedEnements', '__AbsentNamespace0_Properties_hideUncheckedEnements', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 33, 3), )
 
     
     hideUncheckedEnements = property(__hideUncheckedEnements.value, __hideUncheckedEnements.set, None, None)
 
     
-    # Element resizebleLineForTextSize uses Python identifier resizebleLineForTextSize
-    __resizebleLineForTextSize = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'resizebleLineForTextSize'), 'resizebleLineForTextSize', '__AbsentNamespace0_Properties_resizebleLineForTextSize', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 41, 3), )
+    # Element isExpanded uses Python identifier isExpanded
+    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_Properties_isExpanded', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 34, 3), )
 
     
-    resizebleLineForTextSize = property(__resizebleLineForTextSize.value, __resizebleLineForTextSize.set, None, None)
+    isExpanded = property(__isExpanded.value, __isExpanded.set, None, None)
 
     
-    # Element showNotesOnlyForSelectedRow uses Python identifier showNotesOnlyForSelectedRow
-    __showNotesOnlyForSelectedRow = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'showNotesOnlyForSelectedRow'), 'showNotesOnlyForSelectedRow', '__AbsentNamespace0_Properties_showNotesOnlyForSelectedRow', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 42, 3), )
+    # Element isGroup uses Python identifier isGroup
+    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_Properties_isGroup', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 35, 3), )
 
     
-    showNotesOnlyForSelectedRow = property(__showNotesOnlyForSelectedRow.value, __showNotesOnlyForSelectedRow.set, None, None)
+    isGroup = property(__isGroup.value, __isGroup.set, None, None)
+
+    
+    # Element lastModificationTime uses Python identifier lastModificationTime
+    __lastModificationTime = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'lastModificationTime'), 'lastModificationTime', '__AbsentNamespace0_Properties_lastModificationTime', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 36, 3), )
+
+    
+    lastModificationTime = property(__lastModificationTime.value, __lastModificationTime.set, None, None)
+
+    
+    # Element markColor uses Python identifier markColor
+    __markColor = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'markColor'), 'markColor', '__AbsentNamespace0_Properties_markColor', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 37, 3), )
+
+    
+    markColor = property(__markColor.value, __markColor.set, None, None)
+
+    
+    # Element note uses Python identifier note
+    __note = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'note'), 'note', '__AbsentNamespace0_Properties_note', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 38, 3), )
+
+    
+    note = property(__note.value, __note.set, None, None)
+
+    
+    # Element numerationStyle uses Python identifier numerationStyle
+    __numerationStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'numerationStyle'), 'numerationStyle', '__AbsentNamespace0_Properties_numerationStyle', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 39, 3), )
+
+    
+    numerationStyle = property(__numerationStyle.value, __numerationStyle.set, None, None)
+
+    
+    # Element password uses Python identifier password
+    __password = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'password'), 'password', '__AbsentNamespace0_Properties_password', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 40, 3), )
+
+    
+    password = property(__password.value, __password.set, None, None)
 
     
     # Element readOnly uses Python identifier readOnly
-    __readOnly = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'readOnly'), 'readOnly', '__AbsentNamespace0_Properties_readOnly', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 43, 3), )
+    __readOnly = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'readOnly'), 'readOnly', '__AbsentNamespace0_Properties_readOnly', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 41, 3), )
 
     
     readOnly = property(__readOnly.value, __readOnly.set, None, None)
 
     
-    # Element ID uses Python identifier ID
-    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_Properties_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 44, 3), )
+    # Element resizebleLineForTextSize uses Python identifier resizebleLineForTextSize
+    __resizebleLineForTextSize = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'resizebleLineForTextSize'), 'resizebleLineForTextSize', '__AbsentNamespace0_Properties_resizebleLineForTextSize', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 42, 3), )
 
     
-    ID = property(__ID.value, __ID.set, None, None)
+    resizebleLineForTextSize = property(__resizebleLineForTextSize.value, __resizebleLineForTextSize.set, None, None)
 
     
-    # Element ChildItems uses Python identifier ChildItems
-    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_Properties_ChildItems', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 45, 3), )
+    # Element showCheckBox uses Python identifier showCheckBox
+    __showCheckBox = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'showCheckBox'), 'showCheckBox', '__AbsentNamespace0_Properties_showCheckBox', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 43, 3), )
 
     
-    ChildItems = property(__ChildItems.value, __ChildItems.set, None, None)
+    showCheckBox = property(__showCheckBox.value, __showCheckBox.set, None, None)
+
+    
+    # Element showNotesOnlyForSelectedRow uses Python identifier showNotesOnlyForSelectedRow
+    __showNotesOnlyForSelectedRow = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'showNotesOnlyForSelectedRow'), 'showNotesOnlyForSelectedRow', '__AbsentNamespace0_Properties_showNotesOnlyForSelectedRow', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 44, 3), )
+
+    
+    showNotesOnlyForSelectedRow = property(__showNotesOnlyForSelectedRow.value, __showNotesOnlyForSelectedRow.set, None, None)
+
+    
+    # Element title uses Python identifier title
+    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_Properties_title', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 45, 3), )
+
+    
+    title = property(__title.value, __title.set, None, None)
 
     
     # Attribute className uses Python identifier className
@@ -404,26 +404,26 @@ class Properties (pyxb.binding.basis.complexTypeDefinition):
     className = property(__className.value, __className.set, None, None)
 
     _ElementMap.update({
-        __isExpanded.name() : __isExpanded,
-        __isGroup.name() : __isGroup,
-        __title.name() : __title,
-        __password.name() : __password,
-        __markColor.name() : __markColor,
-        __note.name() : __note,
+        __ChildItems.name() : __ChildItems,
+        __ID.name() : __ID,
         __context.name() : __context,
-        __fontSize.name() : __fontSize,
-        __defaultFontStyle.name() : __defaultFontStyle,
         __defaultColor.name() : __defaultColor,
-        __numerationStyle.name() : __numerationStyle,
-        __lastModificationTime.name() : __lastModificationTime,
-        __showCheckBox.name() : __showCheckBox,
+        __defaultFontStyle.name() : __defaultFontStyle,
+        __fontSize.name() : __fontSize,
         __hideCheckedEnements.name() : __hideCheckedEnements,
         __hideUncheckedEnements.name() : __hideUncheckedEnements,
-        __resizebleLineForTextSize.name() : __resizebleLineForTextSize,
-        __showNotesOnlyForSelectedRow.name() : __showNotesOnlyForSelectedRow,
+        __isExpanded.name() : __isExpanded,
+        __isGroup.name() : __isGroup,
+        __lastModificationTime.name() : __lastModificationTime,
+        __markColor.name() : __markColor,
+        __note.name() : __note,
+        __numerationStyle.name() : __numerationStyle,
+        __password.name() : __password,
         __readOnly.name() : __readOnly,
-        __ID.name() : __ID,
-        __ChildItems.name() : __ChildItems
+        __resizebleLineForTextSize.name() : __resizebleLineForTextSize,
+        __showCheckBox.name() : __showCheckBox,
+        __showNotesOnlyForSelectedRow.name() : __showNotesOnlyForSelectedRow,
+        __title.name() : __title
     })
     _AttributeMap.update({
         __className.name() : __className
@@ -531,39 +531,39 @@ class context (pyxb.binding.basis.complexTypeDefinition):
     _AttributeMap = {}
     # Base type is pyxb.binding.datatypes.anyType
     
-    # Element isExpanded uses Python identifier isExpanded
-    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_context_isExpanded', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3), )
+    # Element ChildItem uses Python identifier ChildItem
+    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_context_ChildItem', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3), )
 
     
-    isExpanded = property(__isExpanded.value, __isExpanded.set, None, None)
+    ChildItem = property(__ChildItem.value, __ChildItem.set, None, None)
 
     
-    # Element isGroup uses Python identifier isGroup
-    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_context_isGroup', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3), )
+    # Element ChildItems uses Python identifier ChildItems
+    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_context_ChildItems', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3), )
 
     
-    isGroup = property(__isGroup.value, __isGroup.set, None, None)
+    ChildItems = property(__ChildItems.value, __ChildItems.set, None, None)
 
     
-    # Element title uses Python identifier title
-    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_context_title', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 66, 3), )
+    # Element ID uses Python identifier ID
+    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_context_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 66, 3), )
 
     
-    title = property(__title.value, __title.set, None, None)
-
-    
-    # Element completionState uses Python identifier completionState
-    __completionState = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'completionState'), 'completionState', '__AbsentNamespace0_context_completionState', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 67, 3), )
-
-    
-    completionState = property(__completionState.value, __completionState.set, None, None)
+    ID = property(__ID.value, __ID.set, None, None)
 
     
     # Element color uses Python identifier color
-    __color = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'color'), 'color', '__AbsentNamespace0_context_color', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 68, 3), )
+    __color = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'color'), 'color', '__AbsentNamespace0_context_color', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 67, 3), )
 
     
     color = property(__color.value, __color.set, None, None)
+
+    
+    # Element completionState uses Python identifier completionState
+    __completionState = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'completionState'), 'completionState', '__AbsentNamespace0_context_completionState', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 68, 3), )
+
+    
+    completionState = property(__completionState.value, __completionState.set, None, None)
 
     
     # Element fontStyle uses Python identifier fontStyle
@@ -573,25 +573,25 @@ class context (pyxb.binding.basis.complexTypeDefinition):
     fontStyle = property(__fontStyle.value, __fontStyle.set, None, None)
 
     
-    # Element ID uses Python identifier ID
-    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_context_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 70, 3), )
+    # Element isExpanded uses Python identifier isExpanded
+    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_context_isExpanded', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 70, 3), )
 
     
-    ID = property(__ID.value, __ID.set, None, None)
+    isExpanded = property(__isExpanded.value, __isExpanded.set, None, None)
 
     
-    # Element ChildItems uses Python identifier ChildItems
-    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_context_ChildItems', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3), )
+    # Element isGroup uses Python identifier isGroup
+    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_context_isGroup', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3), )
 
     
-    ChildItems = property(__ChildItems.value, __ChildItems.set, None, None)
+    isGroup = property(__isGroup.value, __isGroup.set, None, None)
 
     
-    # Element ChildItem uses Python identifier ChildItem
-    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_context_ChildItem', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3), )
+    # Element title uses Python identifier title
+    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_context_title', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3), )
 
     
-    ChildItem = property(__ChildItem.value, __ChildItem.set, None, None)
+    title = property(__title.value, __title.set, None, None)
 
     
     # Attribute className uses Python identifier className
@@ -602,15 +602,15 @@ class context (pyxb.binding.basis.complexTypeDefinition):
     className = property(__className.value, __className.set, None, None)
 
     _ElementMap.update({
+        __ChildItem.name() : __ChildItem,
+        __ChildItems.name() : __ChildItems,
+        __ID.name() : __ID,
+        __color.name() : __color,
+        __completionState.name() : __completionState,
+        __fontStyle.name() : __fontStyle,
         __isExpanded.name() : __isExpanded,
         __isGroup.name() : __isGroup,
-        __title.name() : __title,
-        __completionState.name() : __completionState,
-        __color.name() : __color,
-        __fontStyle.name() : __fontStyle,
-        __ID.name() : __ID,
-        __ChildItems.name() : __ChildItems,
-        __ChildItem.name() : __ChildItem
+        __title.name() : __title
     })
     _AttributeMap.update({
         __className.name() : __className
@@ -1153,73 +1153,73 @@ class ChildItem (pyxb.binding.basis.complexTypeDefinition):
     # Base type is pyxb.binding.datatypes.anyType
     
     # Element ChildItem uses Python identifier ChildItem
-    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_ChildItem_ChildItem', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3), )
+    __ChildItem = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItem'), 'ChildItem', '__AbsentNamespace0_ChildItem_ChildItem', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 207, 3), )
 
     
     ChildItem = property(__ChildItem.value, __ChildItem.set, None, None)
 
     
     # Element ChildItems uses Python identifier ChildItems
-    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_ChildItem_ChildItems', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 208, 3), )
+    __ChildItems = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ChildItems'), 'ChildItems', '__AbsentNamespace0_ChildItem_ChildItems', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 208, 3), )
 
     
     ChildItems = property(__ChildItems.value, __ChildItems.set, None, None)
 
     
     # Element ID uses Python identifier ID
-    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_ChildItem_ID', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 209, 3), )
+    __ID = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'ID'), 'ID', '__AbsentNamespace0_ChildItem_ID', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 209, 3), )
 
     
     ID = property(__ID.value, __ID.set, None, None)
 
     
     # Element color uses Python identifier color
-    __color = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'color'), 'color', '__AbsentNamespace0_ChildItem_color', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 210, 3), )
+    __color = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'color'), 'color', '__AbsentNamespace0_ChildItem_color', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 210, 3), )
 
     
     color = property(__color.value, __color.set, None, None)
 
     
     # Element completionState uses Python identifier completionState
-    __completionState = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'completionState'), 'completionState', '__AbsentNamespace0_ChildItem_completionState', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 211, 3), )
+    __completionState = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'completionState'), 'completionState', '__AbsentNamespace0_ChildItem_completionState', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 211, 3), )
 
     
     completionState = property(__completionState.value, __completionState.set, None, None)
 
     
     # Element fontStyle uses Python identifier fontStyle
-    __fontStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'fontStyle'), 'fontStyle', '__AbsentNamespace0_ChildItem_fontStyle', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 212, 3), )
+    __fontStyle = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'fontStyle'), 'fontStyle', '__AbsentNamespace0_ChildItem_fontStyle', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 212, 3), )
 
     
     fontStyle = property(__fontStyle.value, __fontStyle.set, None, None)
 
     
     # Element isExpanded uses Python identifier isExpanded
-    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_ChildItem_isExpanded', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 213, 3), )
+    __isExpanded = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isExpanded'), 'isExpanded', '__AbsentNamespace0_ChildItem_isExpanded', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 213, 3), )
 
     
     isExpanded = property(__isExpanded.value, __isExpanded.set, None, None)
 
     
     # Element isGroup uses Python identifier isGroup
-    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_ChildItem_isGroup', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 214, 3), )
+    __isGroup = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'isGroup'), 'isGroup', '__AbsentNamespace0_ChildItem_isGroup', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 214, 3), )
 
     
     isGroup = property(__isGroup.value, __isGroup.set, None, None)
 
     
-    # Element title uses Python identifier title
-    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_ChildItem_title', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3), )
-
-    
-    title = property(__title.value, __title.set, None, None)
-
-    
     # Element notes uses Python identifier notes
-    __notes = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'notes'), 'notes', '__AbsentNamespace0_ChildItem_notes', True, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3), )
+    __notes = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'notes'), 'notes', '__AbsentNamespace0_ChildItem_notes', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3), )
 
     
     notes = property(__notes.value, __notes.set, None, None)
+
+    
+    # Element title uses Python identifier title
+    __title = pyxb.binding.content.ElementDeclaration(pyxb.namespace.ExpandedName(None, 'title'), 'title', '__AbsentNamespace0_ChildItem_title', False, pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3), )
+
+    
+    title = property(__title.value, __title.set, None, None)
 
     
     # Attribute className uses Python identifier className
@@ -1238,8 +1238,8 @@ class ChildItem (pyxb.binding.basis.complexTypeDefinition):
         __fontStyle.name() : __fontStyle,
         __isExpanded.name() : __isExpanded,
         __isGroup.name() : __isGroup,
-        __title.name() : __title,
-        __notes.name() : __notes
+        __notes.name() : __notes,
+        __title.name() : __title
     })
     _AttributeMap.update({
         __className.name() : __className
@@ -1282,15 +1282,15 @@ Namespace.addCategoryObject('elementBinding', Document.name().localName(), Docum
 
 
 
-Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Ext'), Ext, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 5, 3)))
+Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'BaseVersion'), BaseVersion, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 5, 3)))
 
-Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Properties'), Properties, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 6, 3)))
+Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Ext'), Ext, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 6, 3)))
 
-Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'BaseVersion'), BaseVersion, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 7, 3)))
+Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Modified'), Modified, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 7, 3)))
 
-Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'VersionNumber'), VersionNumber, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 8, 3)))
+Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Properties'), Properties, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 8, 3)))
 
-Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Modified'), Modified, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 9, 3)))
+Document_._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'VersionNumber'), VersionNumber, scope=Document_, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 9, 3)))
 
 def _BuildAutomaton ():
     # Remove this helper function from the namespace after it is invoked
@@ -1312,27 +1312,27 @@ def _BuildAutomaton ():
     states = []
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_0, False))
-    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'Ext')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 5, 3))
+    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'BaseVersion')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 5, 3))
     st_0 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_0)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_1, False))
-    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'Properties')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 6, 3))
+    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'Ext')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 6, 3))
     st_1 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_1)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_2, False))
-    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'BaseVersion')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 7, 3))
+    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'Modified')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 7, 3))
     st_2 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_2)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_3, False))
-    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'VersionNumber')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 8, 3))
+    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'Properties')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 8, 3))
     st_3 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_3)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_4, False))
-    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'Modified')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 9, 3))
+    symbol = pyxb.binding.content.ElementUse(Document_._UseForTag(pyxb.namespace.ExpandedName(None, 'VersionNumber')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 9, 3))
     st_4 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_4)
     transitions = []
@@ -1381,13 +1381,13 @@ Document_._Automaton = _BuildAutomaton()
 
 
 
-BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'VersionNumber'), VersionNumber, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 15, 3)))
+BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Ext'), Ext, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 15, 3)))
 
 BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Modified'), Modified, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 16, 3)))
 
-BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Ext'), Ext, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 17, 3)))
+BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Properties'), Properties, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 17, 3)))
 
-BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'Properties'), Properties, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 18, 3)))
+BaseVersion._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'VersionNumber'), VersionNumber, scope=BaseVersion, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 18, 3)))
 
 def _BuildAutomaton_ ():
     # Remove this helper function from the namespace after it is invoked
@@ -1407,7 +1407,7 @@ def _BuildAutomaton_ ():
     states = []
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_0, False))
-    symbol = pyxb.binding.content.ElementUse(BaseVersion._UseForTag(pyxb.namespace.ExpandedName(None, 'VersionNumber')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 15, 3))
+    symbol = pyxb.binding.content.ElementUse(BaseVersion._UseForTag(pyxb.namespace.ExpandedName(None, 'Ext')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 15, 3))
     st_0 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_0)
     final_update = set()
@@ -1417,12 +1417,12 @@ def _BuildAutomaton_ ():
     states.append(st_1)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_2, False))
-    symbol = pyxb.binding.content.ElementUse(BaseVersion._UseForTag(pyxb.namespace.ExpandedName(None, 'Ext')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 17, 3))
+    symbol = pyxb.binding.content.ElementUse(BaseVersion._UseForTag(pyxb.namespace.ExpandedName(None, 'Properties')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 17, 3))
     st_2 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_2)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_3, False))
-    symbol = pyxb.binding.content.ElementUse(BaseVersion._UseForTag(pyxb.namespace.ExpandedName(None, 'Properties')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 18, 3))
+    symbol = pyxb.binding.content.ElementUse(BaseVersion._UseForTag(pyxb.namespace.ExpandedName(None, 'VersionNumber')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 18, 3))
     st_3 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_3)
     transitions = []
@@ -1459,45 +1459,45 @@ BaseVersion._Automaton = _BuildAutomaton_()
 
 
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isExpanded'), isExpanded, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 26, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ChildItems'), ChildItems, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 26, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isGroup'), isGroup, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 27, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ID'), ID, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 27, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'title'), title, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 28, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'context'), context, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 28, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'password'), password, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 29, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'defaultColor'), defaultColor, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 29, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'markColor'), markColor, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 30, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'defaultFontStyle'), defaultFontStyle, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 30, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'note'), note, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 31, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'fontSize'), fontSize, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 31, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'context'), context, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 32, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'hideCheckedEnements'), hideCheckedEnements, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 32, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'fontSize'), fontSize, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 33, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'hideUncheckedEnements'), hideUncheckedEnements, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 33, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'defaultFontStyle'), defaultFontStyle, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 34, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isExpanded'), isExpanded, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 34, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'defaultColor'), defaultColor, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 35, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isGroup'), isGroup, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 35, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'numerationStyle'), numerationStyle, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 36, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'lastModificationTime'), lastModificationTime, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 36, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'lastModificationTime'), lastModificationTime, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 37, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'markColor'), markColor, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 37, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'showCheckBox'), showCheckBox, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 38, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'note'), note, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 38, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'hideCheckedEnements'), hideCheckedEnements, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 39, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'numerationStyle'), numerationStyle, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 39, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'hideUncheckedEnements'), hideUncheckedEnements, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 40, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'password'), password, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 40, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'resizebleLineForTextSize'), resizebleLineForTextSize, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 41, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'readOnly'), readOnly, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 41, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'showNotesOnlyForSelectedRow'), showNotesOnlyForSelectedRow, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 42, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'resizebleLineForTextSize'), resizebleLineForTextSize, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 42, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'readOnly'), readOnly, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 43, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'showCheckBox'), showCheckBox, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 43, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ID'), ID, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 44, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'showNotesOnlyForSelectedRow'), showNotesOnlyForSelectedRow, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 44, 3)))
 
-Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ChildItems'), ChildItems, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 45, 3)))
+Properties._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'title'), title, scope=Properties, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 45, 3)))
 
 def _BuildAutomaton_2 ():
     # Remove this helper function from the namespace after it is invoked
@@ -1549,102 +1549,102 @@ def _BuildAutomaton_2 ():
     states = []
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_0, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'isExpanded')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 26, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'ChildItems')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 26, 3))
     st_0 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_0)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_1, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'isGroup')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 27, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'ID')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 27, 3))
     st_1 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_1)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_2, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'title')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 28, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'context')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 28, 3))
     st_2 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_2)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_3, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'password')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 29, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'defaultColor')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 29, 3))
     st_3 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_3)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_4, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'markColor')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 30, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'defaultFontStyle')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 30, 3))
     st_4 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_4)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_5, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'note')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 31, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'fontSize')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 31, 3))
     st_5 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_5)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_6, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'context')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 32, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'hideCheckedEnements')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 32, 3))
     st_6 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_6)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_7, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'fontSize')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 33, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'hideUncheckedEnements')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 33, 3))
     st_7 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_7)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_8, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'defaultFontStyle')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 34, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'isExpanded')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 34, 3))
     st_8 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_8)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_9, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'defaultColor')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 35, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'isGroup')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 35, 3))
     st_9 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_9)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_10, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'numerationStyle')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 36, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'lastModificationTime')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 36, 3))
     st_10 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_10)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_11, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'lastModificationTime')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 37, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'markColor')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 37, 3))
     st_11 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_11)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_12, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'showCheckBox')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 38, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'note')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 38, 3))
     st_12 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_12)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_13, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'hideCheckedEnements')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 39, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'numerationStyle')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 39, 3))
     st_13 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_13)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_14, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'hideUncheckedEnements')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 40, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'password')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 40, 3))
     st_14 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_14)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_15, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'resizebleLineForTextSize')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 41, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'readOnly')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 41, 3))
     st_15 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_15)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_16, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'showNotesOnlyForSelectedRow')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 42, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'resizebleLineForTextSize')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 42, 3))
     st_16 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_16)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_17, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'readOnly')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 43, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'showCheckBox')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 43, 3))
     st_17 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_17)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_18, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'ID')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 44, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'showNotesOnlyForSelectedRow')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 44, 3))
     st_18 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_18)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_19, False))
-    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'ChildItems')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 45, 3))
+    symbol = pyxb.binding.content.ElementUse(Properties._UseForTag(pyxb.namespace.ExpandedName(None, 'title')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 45, 3))
     st_19 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_19)
     transitions = []
@@ -2141,23 +2141,23 @@ note._Automaton = _BuildAutomaton_4()
 
 
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isExpanded'), isExpanded, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ChildItem'), ChildItem, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isGroup'), isGroup, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ChildItems'), ChildItems, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'title'), title, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 66, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ID'), ID, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 66, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'completionState'), completionState, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 67, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'color'), color, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 67, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'color'), color, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 68, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'completionState'), completionState, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 68, 3)))
 
 context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'fontStyle'), fontStyle, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 69, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ID'), ID, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 70, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isExpanded'), isExpanded, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 70, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ChildItems'), ChildItems, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isGroup'), isGroup, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3)))
 
-context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'ChildItem'), ChildItem, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3)))
+context._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'title'), title, scope=context, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3)))
 
 def _BuildAutomaton_5 ():
     # Remove this helper function from the namespace after it is invoked
@@ -2166,7 +2166,7 @@ def _BuildAutomaton_5 ():
     import pyxb.utils.fac as fac
 
     counters = set()
-    cc_0 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3))
+    cc_0 = fac.CounterCondition(min=0, max=None, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3))
     counters.add(cc_0)
     cc_1 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3))
     counters.add(cc_1)
@@ -2182,32 +2182,32 @@ def _BuildAutomaton_5 ():
     counters.add(cc_6)
     cc_7 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3))
     counters.add(cc_7)
-    cc_8 = fac.CounterCondition(min=0, max=None, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3))
+    cc_8 = fac.CounterCondition(min=0, max=1, metadata=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3))
     counters.add(cc_8)
     states = []
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_0, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'isExpanded')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'ChildItem')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 64, 3))
     st_0 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_0)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_1, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'isGroup')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'ChildItems')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 65, 3))
     st_1 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_1)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_2, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'title')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 66, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'ID')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 66, 3))
     st_2 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_2)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_3, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'completionState')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 67, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'color')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 67, 3))
     st_3 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_3)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_4, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'color')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 68, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'completionState')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 68, 3))
     st_4 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_4)
     final_update = set()
@@ -2217,17 +2217,17 @@ def _BuildAutomaton_5 ():
     states.append(st_5)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_6, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'ID')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 70, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'isExpanded')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 70, 3))
     st_6 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_6)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_7, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'ChildItems')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'isGroup')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 71, 3))
     st_7 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_7)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_8, False))
-    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'ChildItem')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3))
+    symbol = pyxb.binding.content.ElementUse(context._UseForTag(pyxb.namespace.ExpandedName(None, 'title')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 72, 3))
     st_8 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_8)
     transitions = []
@@ -2401,9 +2401,9 @@ ChildItem._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(Non
 
 ChildItem._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'isGroup'), isGroup, scope=ChildItem, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 214, 3)))
 
-ChildItem._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'title'), title, scope=ChildItem, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3)))
+ChildItem._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'notes'), notes, scope=ChildItem, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3)))
 
-ChildItem._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'notes'), notes, scope=ChildItem, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3)))
+ChildItem._AddElement(pyxb.binding.basis.element(pyxb.namespace.ExpandedName(None, 'title'), title, scope=ChildItem, location=pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3)))
 
 def _BuildAutomaton_8 ():
     # Remove this helper function from the namespace after it is invoked
@@ -2475,19 +2475,17 @@ def _BuildAutomaton_8 ():
     states.append(st_7)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_8, False))
-    symbol = pyxb.binding.content.ElementUse(ChildItem._UseForTag(pyxb.namespace.ExpandedName(None, 'title')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3))
+    symbol = pyxb.binding.content.ElementUse(ChildItem._UseForTag(pyxb.namespace.ExpandedName(None, 'notes')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 215, 3))
     st_8 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_8)
     final_update = set()
     final_update.add(fac.UpdateInstruction(cc_9, False))
-    symbol = pyxb.binding.content.ElementUse(ChildItem._UseForTag(pyxb.namespace.ExpandedName(None, 'notes')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3))
+    symbol = pyxb.binding.content.ElementUse(ChildItem._UseForTag(pyxb.namespace.ExpandedName(None, 'title')), pyxb.utils.utility.Location('/Users/dave/git/github.com/Public/Swapsies/xsd/cod.types.xsd', 216, 3))
     st_9 = fac.State(symbol, is_initial=True, final_update=final_update, is_unordered_catenation=False)
     states.append(st_9)
     transitions = []
     transitions.append(fac.Transition(st_0, [
         fac.UpdateInstruction(cc_0, True) ]))
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_0, False) ]))
     transitions.append(fac.Transition(st_1, [
         fac.UpdateInstruction(cc_0, False) ]))
     transitions.append(fac.Transition(st_2, [
@@ -2508,12 +2506,8 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_0, False) ]))
     st_0._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_1, False) ]))
     transitions.append(fac.Transition(st_1, [
         fac.UpdateInstruction(cc_1, True) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_1, False) ]))
     transitions.append(fac.Transition(st_2, [
         fac.UpdateInstruction(cc_1, False) ]))
     transitions.append(fac.Transition(st_3, [
@@ -2532,14 +2526,8 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_1, False) ]))
     st_1._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_2, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_2, False) ]))
     transitions.append(fac.Transition(st_2, [
         fac.UpdateInstruction(cc_2, True) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_2, False) ]))
     transitions.append(fac.Transition(st_3, [
         fac.UpdateInstruction(cc_2, False) ]))
     transitions.append(fac.Transition(st_4, [
@@ -2556,16 +2544,8 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_2, False) ]))
     st_2._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_3, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_3, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_3, False) ]))
     transitions.append(fac.Transition(st_3, [
         fac.UpdateInstruction(cc_3, True) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_3, False) ]))
     transitions.append(fac.Transition(st_4, [
         fac.UpdateInstruction(cc_3, False) ]))
     transitions.append(fac.Transition(st_5, [
@@ -2580,18 +2560,8 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_3, False) ]))
     st_3._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_4, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_4, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_4, False) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_4, False) ]))
     transitions.append(fac.Transition(st_4, [
         fac.UpdateInstruction(cc_4, True) ]))
-    transitions.append(fac.Transition(st_4, [
-        fac.UpdateInstruction(cc_4, False) ]))
     transitions.append(fac.Transition(st_5, [
         fac.UpdateInstruction(cc_4, False) ]))
     transitions.append(fac.Transition(st_6, [
@@ -2604,20 +2574,8 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_4, False) ]))
     st_4._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_5, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_5, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_5, False) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_5, False) ]))
-    transitions.append(fac.Transition(st_4, [
-        fac.UpdateInstruction(cc_5, False) ]))
     transitions.append(fac.Transition(st_5, [
         fac.UpdateInstruction(cc_5, True) ]))
-    transitions.append(fac.Transition(st_5, [
-        fac.UpdateInstruction(cc_5, False) ]))
     transitions.append(fac.Transition(st_6, [
         fac.UpdateInstruction(cc_5, False) ]))
     transitions.append(fac.Transition(st_7, [
@@ -2628,22 +2586,8 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_5, False) ]))
     st_5._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_6, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_6, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_6, False) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_6, False) ]))
-    transitions.append(fac.Transition(st_4, [
-        fac.UpdateInstruction(cc_6, False) ]))
-    transitions.append(fac.Transition(st_5, [
-        fac.UpdateInstruction(cc_6, False) ]))
     transitions.append(fac.Transition(st_6, [
         fac.UpdateInstruction(cc_6, True) ]))
-    transitions.append(fac.Transition(st_6, [
-        fac.UpdateInstruction(cc_6, False) ]))
     transitions.append(fac.Transition(st_7, [
         fac.UpdateInstruction(cc_6, False) ]))
     transitions.append(fac.Transition(st_8, [
@@ -2652,76 +2596,22 @@ def _BuildAutomaton_8 ():
         fac.UpdateInstruction(cc_6, False) ]))
     st_6._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_7, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_7, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_7, False) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_7, False) ]))
-    transitions.append(fac.Transition(st_4, [
-        fac.UpdateInstruction(cc_7, False) ]))
-    transitions.append(fac.Transition(st_5, [
-        fac.UpdateInstruction(cc_7, False) ]))
-    transitions.append(fac.Transition(st_6, [
-        fac.UpdateInstruction(cc_7, False) ]))
     transitions.append(fac.Transition(st_7, [
         fac.UpdateInstruction(cc_7, True) ]))
-    transitions.append(fac.Transition(st_7, [
-        fac.UpdateInstruction(cc_7, False) ]))
     transitions.append(fac.Transition(st_8, [
         fac.UpdateInstruction(cc_7, False) ]))
     transitions.append(fac.Transition(st_9, [
         fac.UpdateInstruction(cc_7, False) ]))
     st_7._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_4, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_5, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_6, [
-        fac.UpdateInstruction(cc_8, False) ]))
-    transitions.append(fac.Transition(st_7, [
-        fac.UpdateInstruction(cc_8, False) ]))
     transitions.append(fac.Transition(st_8, [
         fac.UpdateInstruction(cc_8, True) ]))
-    transitions.append(fac.Transition(st_8, [
-        fac.UpdateInstruction(cc_8, False) ]))
     transitions.append(fac.Transition(st_9, [
         fac.UpdateInstruction(cc_8, False) ]))
     st_8._set_transitionSet(transitions)
     transitions = []
-    transitions.append(fac.Transition(st_0, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_1, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_2, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_3, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_4, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_5, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_6, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_7, [
-        fac.UpdateInstruction(cc_9, False) ]))
-    transitions.append(fac.Transition(st_8, [
-        fac.UpdateInstruction(cc_9, False) ]))
     transitions.append(fac.Transition(st_9, [
         fac.UpdateInstruction(cc_9, True) ]))
-    transitions.append(fac.Transition(st_9, [
-        fac.UpdateInstruction(cc_9, False) ]))
     st_9._set_transitionSet(transitions)
     return fac.Automaton(states, counters, True, containing_state=None)
 ChildItem._Automaton = _BuildAutomaton_8()

@@ -11,6 +11,7 @@ from Perdy.pretty import prettyPrint
 from Perdy.parser import printXML
 from Perdy.pyxbext import directory
 from Argumental.Argue import Argue
+from GoldenChild.xpath import *
 
 logger = Logger()
 args = Argue()
@@ -200,6 +201,38 @@ class COD(object):
 		for childItem in children:
 			self.__show(childItem, checkboxes=checkboxes, shownotes=shownotes)
 			
+	@args.operation
+	def reorganize(self, file):
+		if not file.endswith('cod'):
+			sys.stderr.write('not a cod file\n')
+			return
+		print(file)
+		
+		cod = XML(*getContextFromFile(file))
+
+		parents = [
+			'Document',
+			'BaseVersion',
+			'Properties',
+			'content',
+			'ChildItem',
+		]
+
+		for parent in parents:
+			for element in getElements(cod.ctx, '//%s'%parent):
+				print(element.name)
+				# sort the children
+				children = dict()
+				for child in getElements(cod.ctx, '*', element):
+					print('\t%s[%s]'%(child.name,child.type))
+					children[child.name] = child
+					#child.unlinkNode()
+				#for child in sorted(children.keys()):
+					#element.addChild(child)
+
+		with open(file, 'w') as output:
+			printXML(str(cod.doc), output=output)
+		
 
 	#........................................................
 	@logger.debug
