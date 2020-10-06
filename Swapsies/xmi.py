@@ -18,21 +18,6 @@ def generateID():
 
 #________________________________________________________________
 class XMI:
-	@property
-	def doc(self):
-		return self.doc
-
-	@property
-	def root(self):
-		return self.root
-
-	@property
-	def modelNS(self):
-		return self.modelNS
-
-	@property
-	def files(self):
-		return self.files
 
 	def __init__(self):
 		self.exporter = '$HeadURL: git@github.com:eddo888/Tools/xmi.py $'
