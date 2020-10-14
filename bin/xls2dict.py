@@ -79,8 +79,8 @@ alignments = {
 
 
 def num2letter(number):
-	rhs = number % 26
-	lhs = (number - rhs) / 26
+	rhs = int(number % 26)
+	lhs = int((number - rhs) / 26)
 
 	#print lhs,rhs
 	letter = chr(ord('A') + rhs)
