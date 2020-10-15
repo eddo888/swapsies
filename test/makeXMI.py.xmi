@@ -1,16 +1,41 @@
 <?xml version="1.0"?>
-<XMI timestamp="2020-10-15 14:27:43" xmi.version="1.1" xmlns:UML="omg.org/UML1.3">
+<XMI timestamp="2020-10-15 15:48:38" xmi.version="1.1" xmlns:UML="omg.org/UML1.3">
 	<XMI.header>
 		<XMI.documentation>
-			<XMI.exporter>Enterprise Architect</XMI.exporter>
-			<XMI.exporterVersion>2.5</XMI.exporterVersion>
+			<XMI.exporter>$HeadURL: git@github.com:eddo888/Tools/xmi.py $</XMI.exporter>
+			<XMI.exporterVersion>$Revision: 11983 $</XMI.exporterVersion>
 		</XMI.documentation>
 		<XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
 	</XMI.header>
 	<XMI.content>
-		<UML:Model isAbstract="false" isLeaf="false" isRoot="true" isSpecification="false" name="TEST" visibility="public" xmi.id="EDDO_8726CE4D2AC2BE495CD48F6F2C7D965B">
-			<UML:Namespace.ownedElement/>
+		<UML:Model isAbstract="false" isLeaf="false" isRoot="true" isSpecification="false" name="2020-10-15 15:48:38" visibility="public" xmi.id="EDDO_cc35706b-07f3-4b74-9f72-201f38d27290">
+			<UML:Namespace.ownedElement>
+				<UML:Package isAbstract="false" isLeaf="false" isRoot="true" isSpecification="false" name="Fundamentals" visibility="public" xmi.id="EDDO_0b7b3047-5f76-43cb-bb4d-afecf72d01ca">
+					<UML:Namespace.ownedElement>
+						<UML:Class isAbstract="false" isLeaf="false" isRoot="true" isSpecification="false" name="text" visibility="public" xmi.id="text">
+							<UML:ModelElement.taggedValue>
+								<UML:TaggedValue tag="ea_eleType" value="element"/>
+							</UML:ModelElement.taggedValue>
+							<UML:Classifier.feature/>
+							<UML:ModelElement.stereotype>
+								<UML:Stereotype xmi.idref="EDDO_4b571388-ee12-434a-900e-80baa658e049"/>
+							</UML:ModelElement.stereotype>
+						</UML:Class>
+					</UML:Namespace.ownedElement>
+				</UML:Package>
+				<UML:Stereotype name="BaseType" xmi.id="EDDO_4b571388-ee12-434a-900e-80baa658e049"/>
+			</UML:Namespace.ownedElement>
 		</UML:Model>
+		<UML:Diagram diagramType="ClassDiagram" name="Fundamentals" owner="EDDO_0b7b3047-5f76-43cb-bb4d-afecf72d01ca" toolName="Enterprise Architect 2.5" xmi.id="EDDO_f4d4cf54-20e7-437c-a59e-c99b8a9660a4">
+			<UML:ModelElement.taggedValue>
+				<UML:TaggedValue tag="package" value="EDDO_0b7b3047-5f76-43cb-bb4d-afecf72d01ca"/>
+				<UML:TaggedValue tag="type" value="Logical"/>
+				<UML:TaggedValue tag="EAStyle" value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=1;PPgs.cx=1;PPgs.cy=1;DocSize.cx=1000;DocSize.cy=1000;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=1;HideProps=1;ShowReqs=0;ShowCons=0;PaperSize=1;HideParents=1;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+			</UML:ModelElement.taggedValue>
+			<UML:Diagram.element>
+				<UML:DiagramElement subject="text"/>
+			</UML:Diagram.element>
+		</UML:Diagram>
 	</XMI.content>
 	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
 		<EAModel.file/>
