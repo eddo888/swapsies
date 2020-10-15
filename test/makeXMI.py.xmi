@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<XMI timestamp="2020-10-15 14:27:43" xmi.version="1.1" xmlns:UML="omg.org/UML1.3">
+	<XMI.header>
+		<XMI.documentation>
+			<XMI.exporter>Enterprise Architect</XMI.exporter>
+			<XMI.exporterVersion>2.5</XMI.exporterVersion>
+		</XMI.documentation>
+		<XMI.metamodel xmi.name="UML" xmi.version="1.4"/>
+	</XMI.header>
+	<XMI.content>
+		<UML:Model isAbstract="false" isLeaf="false" isRoot="true" isSpecification="false" name="TEST" visibility="public" xmi.id="EDDO_8726CE4D2AC2BE495CD48F6F2C7D965B">
+			<UML:Namespace.ownedElement/>
+		</UML:Model>
+	</XMI.content>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5">
+		<EAModel.file/>
+	</XMI.extensions>
+</XMI>
