@@ -3,7 +3,9 @@
 # PYTHON_ARGCOMPLETE_OK
 
 ####################################################################################
-import sys, re, os, argparse, argcomplete
+import sys, re, os, io, argparse, argcomplete
+sys.path.insert(0,'..')
+
 from subprocess import Popen, PIPE
 
 from Swapsies.xmi import *
@@ -105,7 +107,7 @@ def main():
 	else:
 		output = sys.stdout
 
-	input = StringIO.StringIO('%s\n' % dt.doc)
+	input = io.StringIO('%s\n' % dt.doc)
 	doParse(input, output)
 	input.close()
 	output.close()
