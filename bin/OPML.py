@@ -55,7 +55,7 @@ class OPML(object):
 
 	#.............................................................
 	def _save(self, file):
-		with codecs.open(file, 'w', encoding='utf8') as output:
+		with codecs.open(file, 'w', encoding='UTF-8') as output:
 			printXML(str(self.doc), output = output)
 			
 
@@ -228,6 +228,7 @@ class OPML(object):
 				('@version', '1.0'),
 				('head', OrderedDict([
 					('title', title.replace('&','and')),
+					('expansionState', '0'),
 				])),
 				('body', OrderedDict([
 				])) 
