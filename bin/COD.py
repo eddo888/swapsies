@@ -8,7 +8,7 @@ from datetime import datetime
 from uuid import uuid4
 
 from docx import Document
-from docx.shared import Inches
+from docx.shared import Inches, RGBColor
 
 from Baubles.Logger import Logger
 from Perdy.pretty import prettyPrint
@@ -33,40 +33,41 @@ class COD(object):
 		'''
 
 		self.xcolours = {
-			'Black': '\033[30m',
+			'White': '\033[37m',
 			'Red': '\033[31m',
-			'Green': '\033[32m',
 			'Orange': '\033[33m',
+			'Green': '\033[32m',
+			'Teal': '\033[36m',
 			'Blue': '\033[34m',
 			'Purple': '\033[35m',
-			'Teal': '\033[36m',
-			'White': '\033[37m',
+			'Black': '\033[30m',
 			'Off': '\033[0m',
 		}
 
 		self.colours = {
 			0: 'White',
-			5: 'Blue',
-			4: 'Green',
+			#1: 'Grey', 
 			2: 'Red',
 			3: 'Orange',
+			4: 'Green',
+			5: 'Blue',
 			6: 'Purple',
 		}
 
 		self.xfonts = {
-			'bold': '\033[1m',
-			'italics': '\033[3m',
-			'underline': '\033[4m',
-			'strikeout': '\033[9m',
 			'normal': '\033[0m',
+			'strikeout': '\033[9m',
+			'underline': '\033[4m',
+			'italics': '\033[3m',
+			'bold': '\033[1m',
 		}
 
 		self.fonts = {
 			0: 'normal',
-			8: 'bold',
-			2: 'underline',
 			1: 'strikeout',
+			2: 'underline',
 			4: 'italics',
+			8: 'bold',
 		}
 
 
@@ -78,7 +79,7 @@ class COD(object):
 		'''
 		font = int(getElementText(cod.ctx, 'fontStyle', childItem))
 		colour = int(getElementText(cod.ctx, 'color', childItem))
-		state = getElementText(cod.ctx, 'completionState', childItem) == 3
+		state = int(getElementText(cod.ctx, 'completionState', childItem)) == 3
 		if checkboxes:
 			checked = '[x] ' if state else '[ ] '
 		else:
@@ -167,7 +168,7 @@ class COD(object):
 
 		font = int(getElementText(cod.ctx, 'fontStyle', childItem))
 		colour = int(getElementText(cod.ctx, 'color', childItem))
-		state = getElementText(cod.ctx, 'completionState', childItem) == 3
+		state = int(getElementText(cod.ctx, 'completionState', childItem)) == 3
 		if checkboxes:
 			checked = '[x] ' if state else '[ ] '
 		else:
@@ -187,8 +188,19 @@ class COD(object):
 			text,
 			self.xcolours['Off'], )
 		)
-		
-		paragraph = docx.add_heading(text, level=depth)
+
+		run = docx.add_heading(level=depth).add_run(checked+text)
+		if font & 8: run.bold = True
+		if font & 4: run.italic = True
+		if font & 2: run.underline = True
+		if font & 1: run.font.strike = True
+
+		if colour == 1: run.font.color.rgb = RGBColor(0x80, 0x80, 0x80)
+		if colour == 2: run.font.color.rgb = RGBColor(0xff, 0x00, 0x00)
+		if colour == 3: run.font.color.rgb = RGBColor(0xff, 0x80, 0x00)
+		if colour == 4: run.font.color.rgb = RGBColor(0x00, 0xff, 0x00)
+		if colour == 5: run.font.color.rgb = RGBColor(0x00, 0x00, 0xff)
+		if colour == 6: run.font.color.rgb = RGBColor(0xff, 0x00, 0xff)
 
 		if shownotes:
 			notes = getElement(cod.ctx, 'notes', childItem)

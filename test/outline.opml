@@ -1,14 +1,2 @@
-<?xml version="1.0" encoding="UTF8"?>
-<opml version="1.0">
-	<head>
-		<title>test/word.docx</title>
-	</head>
-	<body _note="" text="Heading 1">
-		<outline text="Heading 4"></outline>
-		<outline text="Body"></outline>
-		<outline text="Heading 2"></outline>
-		<outline text="Body"></outline>
-		<outline text="Heading 1"></outline>
-		<outline text="Body"></outline>
-	</body>
-</opml>
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="1.0"><head><title>../test/indented.docx</title><expansionState>0</expansionState></head><body><outline text="One"></outline><outline text="Two"></outline><outline text="Three"></outline></body></opml>

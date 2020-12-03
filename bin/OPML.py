@@ -369,18 +369,21 @@ class OPML(object):
 
 		p = re.compile('^(\t*| *)(\S.*)$')
 		
+		level=1
+
 		for paragraph in doc.paragraphs:
 			ps = paragraph.style
-			pf = paragraph.paragraph_format
+			pf = ps.paragraph_format
 
 			text = paragraph.text.strip()
 			
-			if pf.first_line_indent or pf.left_indent:
-				print(paragraph.text)
+			print(
+				paragraph.text,
+				paragraph.paragraph_format.left_indent,
+				paragraph.style.paragraph_format.left_indent,
+			)
 
 			if len(text) == 0: continue
-
-			level=1
 
 			outline = {
 				'@text': text,
