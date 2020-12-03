@@ -18,6 +18,8 @@ for style in document.styles:
 		print(depth)
 		indent = Inches(depth*0.25)
 		style.paragraph_format.left_indent = indent
+		style.paragraph_format.first_line_indent = 1
+
 
 document.add_heading('Document Title', 0)
 
@@ -27,7 +29,7 @@ p.add_run(' and some ')
 p.add_run('italic.').italic = True
 
 document.add_heading('Heading, level 1', level=1)
-document.add_paragraph('Intense quote', style='Intense Quote')
+document.add_paragraph('Intense quote', style='Body Text')
 
 document.add_heading('two', level=2)
 

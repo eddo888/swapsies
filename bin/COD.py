@@ -200,7 +200,9 @@ class COD(object):
 						if checkboxes else '  '*depth, note,
 						self.xcolours['Off'],
 					))
-					docx.add_paragraph(note)
+					indent = Inches(depth*0.25)
+					docx.add_paragraph(note).paragraph_format.left_indent = indent
+
 
 		for grandChild in getElements(cod.ctx, 'ChildItem', childItem):
 			self.__node2docx(
