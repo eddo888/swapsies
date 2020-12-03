@@ -69,7 +69,7 @@ class COD(object):
 
 	#........................................................
 	@logger.debug
-	def __show(self, cod, childItem, indent='', checkboxes=False, shownotes=False):
+	def __node2text(self, cod, childItem, indent='', checkboxes=False, shownotes=False):
 		'''
 		show a single item
 		'''
@@ -104,7 +104,7 @@ class COD(object):
 					))
 
 		for grandChild in getElements(cod.ctx, 'ChildItem', childItem):
-			self.__show(
+			self.__node2text(
 				cod,
 				grandChild,
 				indent='%s  ' % indent,
@@ -115,7 +115,7 @@ class COD(object):
 
 	#........................................................
 	@logger.debug
-	def __convert(self, file, cod, checkboxes=False, shownotes=False):
+	def __nodes2text(self, file, cod, checkboxes=False, shownotes=False):
 		'''
 		show the cod file
 		'''
@@ -125,7 +125,7 @@ class COD(object):
 		t = getElementText(cod.ctx, '/Document/Properties/title')
 		print('%s -> "%s" => %s' % (file, t, a))
 		for childItem in getElements(cod.ctx, '/Document/Properties/context/ChildItem'):
-			self.__show(cod, childItem, checkboxes=checkboxes, shownotes=shownotes)
+			self.__node2text(cod, childItem, checkboxes=checkboxes, shownotes=shownotes)
 			
 
 	#........................................................
@@ -152,7 +152,7 @@ class COD(object):
 				self.xfonts[key] = ''
 
 		cod = XML(*getContextFromFile(os.path.expanduser(file)))
-		self.__convert(file, cod, checkboxes=checkboxes, shownotes=shownotes)
+		self.__nodes2text(file, cod, checkboxes=checkboxes, shownotes=shownotes)
 
 
 #____________________________________________________________

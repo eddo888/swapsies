@@ -160,7 +160,7 @@ class OPML(object):
 						(indent, text) = bulletMatch.groups()[1:]
 					else:
 						continue
-				print('%s%s\n'%(indent, text))
+				print('%s%s'%(indent, text))
 
 
 	#.............................................................
