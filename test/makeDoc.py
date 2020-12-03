@@ -9,6 +9,16 @@ from docx.shared import Inches
 
 document = Document()
 
+p = re.compile('^Heading (\d)$')
+
+for style in document.styles:
+	m =  p.match(style.name)
+	if m:
+		depth = int(m.group(1))
+		print(depth)
+		indent = Inches(depth*0.25)
+		style.paragraph_format.left_indent = indent
+
 document.add_heading('Document Title', 0)
 
 p = document.add_paragraph('A plain paragraph having some ')
@@ -18,6 +28,8 @@ p.add_run('italic.').italic = True
 
 document.add_heading('Heading, level 1', level=1)
 document.add_paragraph('Intense quote', style='Intense Quote')
+
+document.add_heading('two', level=2)
 
 document.add_paragraph(
     'first item in unordered list', style='List Bullet'

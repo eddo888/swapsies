@@ -6,7 +6,9 @@ import sys, os, json, logging, arrow, codecs
 
 from datetime import datetime
 from uuid import uuid4
+
 from docx import Document
+from docx.shared import Inches
 
 from Baubles.Logger import Logger
 from Perdy.pretty import prettyPrint
@@ -244,6 +246,15 @@ class COD(object):
 		#self.reorganize(file)
 
 		docx = Document()
+
+		p = re.compile('^Heading (\d)$')
+
+		for style in docx.styles:
+			m =  p.match(style.name)
+			if m:
+				depth = int(m.group(1))
+				indent = Inches(depth*0.25)
+				style.paragraph_format.left_indent = indent
 
 		if blackAndWhite:
 			for key in list(self.xcolours.keys()):
