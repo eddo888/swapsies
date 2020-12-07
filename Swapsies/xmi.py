@@ -377,14 +377,7 @@ class XMI:
 		parameterC.setProp('xmi.idref', tid)
 		return
 
-	def makeAssociation(self,
-																					name,
-																					source,
-																					target,
-																					parent,
-																					sid=None,
-																					tid=None,
-																					array=False):
+	def makeAssociation(self, name, source, target, parent, sid=None, tid=None, array=False):
 		if source:
 			sid = source.parent.prop('xmi.id')
 		if target:
@@ -428,14 +421,7 @@ class XMI:
 		targetClass.setProp('xmi.idref', tid)
 		return association
 
-	def makeUsage(self,
-															name,
-															source,
-															target,
-															parent,
-															sid=None,
-															tid=None,
-															array=False):
+	def makeUsage(self, name, source, target, parent, sid=None, tid=None, array=False):
 		if source:
 			sid = source.parent.prop('xmi.id')
 		if target:
@@ -531,8 +517,7 @@ class XMI:
 		return model
 
 	def makeTransition(self, source, target, parent, name=None):
-		transitions = getElement(self.ctx, '*[contains(local-name(),"transitions")]',
-																											parent)
+		transitions = getElement(self.ctx, '*[contains(local-name(),"transitions")]', parent)
 		if transitions is None:
 			transitions = addElement(self.doc, 'UML:StateMachine.transitions', parent)
 		transition = addElement(self.doc, 'UML:Transition', transitions)
@@ -551,8 +536,7 @@ class XMI:
 		return transition
 
 	def makeActivitySwimLane(self, name, parent):
-		partitions = getElement(self.ctx, '*[contains(local-name(),"partition")]',
-																										parent)
+		partitions = getElement(self.ctx, '*[contains(local-name(),"partition")]', parent)
 		if partitions is None:
 			partitions = addElement(self.doc, 'UML:ActivityGraph.partition', parent)
 		partition = addElement(self.doc, 'UML:Partition', partitions)
@@ -561,8 +545,7 @@ class XMI:
 		return partition
 
 	def addActivityToLane(self, state, parent):
-		contents = getElement(self.ctx, '*[contains(local-name(),"contents")]',
-																								parent)
+		contents = getElement(self.ctx, '*[contains(local-name(),"contents")]', parent)
 		if contents is None:
 			contents = addElement(self.doc, 'UML:Partition.contents', parent)
 		content = addElement(self.doc, state.name, contents)
@@ -623,41 +606,35 @@ class XMI:
 		diagram = self.makeDiagram(name, parent)
 		diagram.parent.setProp('diagramType', 'ComponentDiagram')
 		self.makeLocalTag('type', 'Logical', diagram.parent)
-		self.makeLocalTag('EAStyle',
-																				self.makeStyle(self.classDiagramStyle), diagram.parent)
+		self.makeLocalTag('EAStyle', self.makeStyle(self.classDiagramStyle), diagram.parent)
 		return diagram
 
 	def makeClassDiagram(self, name, parent):
 		diagram = self.makeDiagram(name, parent)
 		diagram.parent.setProp('diagramType', 'ClassDiagram')
 		self.makeLocalTag('type', 'Logical', diagram.parent)
-		self.makeLocalTag('EAStyle',
-																				self.makeStyle(self.classDiagramStyle), diagram.parent)
+		self.makeLocalTag('EAStyle', self.makeStyle(self.classDiagramStyle), diagram.parent)
 		return diagram
 
 	def makeActivityDiagram(self, name, parent):
 		diagram = self.makeDiagram(name, parent)
 		diagram.parent.setProp('diagramType', 'ActivityDiagram')
 		self.makeLocalTag('type', 'Activity', diagram.parent)
-		self.makeLocalTag('EAStyle',
-																				self.makeStyle(self.activityDiagramStyle), diagram.parent)
+		self.makeLocalTag('EAStyle', self.makeStyle(self.activityDiagramStyle), diagram.parent)
 		return diagram
 
 	def makeRequirementsDiagram(self, name, parent):
 		diagram = self.makeDiagram(name, parent)
 		diagram.parent.setProp('diagramType', 'CustomDiagram')
 		self.makeLocalTag('type', 'Custom', diagram.parent)
-		self.makeLocalTag('EAStyle',
-																				self.makeStyle(self.requirementsDiagramStyle),
-																				diagram.parent)
+		self.makeLocalTag('EAStyle', self.makeStyle(self.requirementsDiagramStyle), diagram.parent)
 		return diagram
 
 	def makeUseCaseDiagram(self, name, parent):
 		diagram = self.makeDiagram(name, parent)
 		diagram.parent.setProp('diagramType', 'UseCaseDiagram')
 		self.makeLocalTag('type', 'Logical', diagram.parent)
-		self.makeLocalTag('EAStyle',
-																				self.makeStyle(self.classDiagramStyle), diagram.parent)
+		self.makeLocalTag('EAStyle', self.makeStyle(self.classDiagramStyle), diagram.parent)
 		return diagram
 
 	def makeDiagram(self, name, parent):

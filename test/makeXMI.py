@@ -17,6 +17,10 @@ for base_type in ['text']:
 	xmi.addDiagramClass(_base_type, diagram)
 	xmi.makeStereotype('BaseType', _base_type)
 	
+_classes = xmi.makePackage('Children', classes)
+xmi.addDiagramClass(_classes, diagram)
+
+_the_type = xmi.makeClass('the_type', _classes)
 
 with open(sys.argv[0]+'.xmi', 'w') as _output:
 	printXML(str(xmi.doc), output=_output, colour=False)
