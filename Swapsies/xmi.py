@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, re, os, uuid
+import sys, re, os, uuid, hashlib
 
 from datetime import *
 
@@ -9,17 +9,23 @@ from Perdy.pretty import *
 
 
 #________________________________________________________________
-def generateID():
+def generateID(text=None):
 	"""
 	todo: cache uuid based on package path Namespac
 	"""
-	return 'EDDO_%s' % uuid.uuid4()
+	if text:
+		m = hashlib.md5()
+		m.update(text.encode('utf8'))
+		gobildeegook = m.hexdigest().upper()
+	else:
+		gobildeegook = uuid.uuid4()
+	return f'EDDO_{gobildeegook}'
 
 
 #________________________________________________________________
 class XMI:
 
-	def __init__(self):
+	def __init__(self, name=None):
 		self.exporter = '$HeadURL: git@github.com:eddo888/Tools/xmi.py $'
 		self.version = '$Revision: 11983 $'
 		self.timestamp = '%Y-%m-%d %H:%M:%S'
@@ -172,7 +178,7 @@ class XMI:
 
 		self.now = datetime.now()
 		self.makeDocument()
-		self.makeModel()
+		self.makeModel(name)
 		self.makeExtensions()
 		self.stereotypes = {}
 		return
@@ -200,16 +206,16 @@ class XMI:
 		meta.setProp('xmi.version', '1.4')
 		return
 
-	def makeModel(self):
+	def makeModel(self, name=None):
 		self.content = addElement(self.doc, 'XMI.content', self.root)
 		model = addElement(self.doc, 'UML:Model', self.content)
 		model.setProp('isAbstract', 'false')
 		model.setProp('isLeaf', 'false')
 		model.setProp('isRoot', 'true')
 		model.setProp('isSpecification', 'false')
-		model.setProp('name', self.now.strftime(self.timestamp))
+		model.setProp('name', name or self.now.strftime(self.timestamp))
 		model.setProp('visibility', 'public')
-		model.setProp('xmi.id', generateID())
+		model.setProp('xmi.id', generateID(name))
 		self.modelNS = addElement(self.doc, 'UML:Namespace.ownedElement', model)
 		#self.rootClass = self.makeClass('EARootClass',self.modelNS)
 		#self.rootClass.parent.setProp('isRoot','true')
@@ -221,7 +227,7 @@ class XMI:
 		self.files = addElement(self.doc, 'EAModel.file', self.extensions)
 		return
 
-	def makePackage(self, name, parent):
+	def makePackage(self, name, parent, uid=None):
 		package = addElement(self.doc, 'UML:Package', parent)
 		package.setProp('isAbstract', 'false')
 		package.setProp('isLeaf', 'false')
@@ -229,25 +235,25 @@ class XMI:
 		package.setProp('isSpecification', 'false')
 		package.setProp('name', name)
 		package.setProp('visibility', 'public')
-		package.setProp('xmi.id', generateID())
+		package.setProp('xmi.id', generateID(uid or name))
 		element = addElement(self.doc, 'UML:Namespace.ownedElement', package)
 		return element
 
-	def getPackage(self, name, parent):
+	def getPackage(self, name, parent, uid=None):
 		package = getElement(self.ctx, '*[@name="%s"]' % name, parent)
 		if package == None:
-			package = self.makePackage(name, parent)
+			package = self.makePackage(name, parent, uid=uid)
 		return package
 
 	def makeCollaboration(self, name, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		collaboration = addElement(self.doc, 'UML:Collaboration', parent)
 		collaboration.setProp('name', name)
 		collaboration.setProp('xmi.id', uid)
 		return addElement(self.doc, 'UML:Namespace.ownedElement', collaboration)
 
 	def makeRequirement(self, name, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		requirement = addElement(self.doc, 'UML:ClassifierRole', parent)
 		requirement.setProp('isAbstract', 'false')
 		requirement.setProp('isLeaf', 'false')
@@ -263,7 +269,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', requirement)
 
 	def makeActor(self, name, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		actor = addElement(self.doc, 'UML:Actor', parent)
 		actor.setProp('isAbstract', 'false')
 		actor.setProp('isLeaf', 'false')
@@ -278,7 +284,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', actor)
 
 	def makeUseCase(self, name, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		useCase = addElement(self.doc, 'UML:UseCase', parent)
 		useCase.setProp('isAbstract', 'false')
 		useCase.setProp('isLeaf', 'false')
@@ -293,7 +299,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', useCase)
 
 	def makeComponent(self, name, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		system = addElement(self.doc, 'UML:Component', parent)
 		system.setProp('isAbstract', 'false')
 		system.setProp('isLeaf', 'false')
@@ -309,7 +315,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', system)
 
 	def makeClass(self, name, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		clasz = addElement(self.doc, 'UML:Class', parent)
 		clasz.setProp('isAbstract', 'false')
 		clasz.setProp('isLeaf', 'false')
@@ -322,7 +328,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', clasz)
 
 	def assignBaseClass(self, subtype, supertype, parent, uid=None):
-		if not uid: uid = generateID()
+		uid = generateID(uid or name)
 		generalized = addElement(self.doc, 'UML:Generalization', parent)
 		generalized.setProp('subtype', supertype.parent.prop('xmi.id'))
 		generalized.setProp('supertype', subtype.parent.prop('xmi.id'))
@@ -369,7 +375,7 @@ class XMI:
 		if not tid:
 			return
 		parameterP = addElement(self.doc, 'UML:Parameter', parent)
-		parameterP.setProp('xmi.id', generateID())
+		parameterP.setProp('xmi.id', generateID(name))
 		parameterP.setProp('name', name)
 		parameterP.setProp('kind', kind)
 		parameterT = addElement(self.doc, 'UML:Parameter.type', parameterP)
@@ -455,7 +461,7 @@ class XMI:
 		cr = addElement(self.doc, 'UML:ClassifierRole', parent)
 		cr.setProp('name', name)
 		cr.setProp('visibility', 'public')
-		cr.setProp('xmi.id', generateID())
+		cr.setProp('xmi.id', generateID(name))
 		#cr.setProp('base',self.rootClass.parent.prop('xmi.id'))
 		self.makeLocalTag('classifier', type.parent.prop('xmi.id'), cr)
 		self.makeLocalTag('classname', type.parent.prop('name'), cr)
@@ -503,7 +509,7 @@ class XMI:
 		if not name in list(self.stereotypes.keys()):
 			ust = addElement(self.doc, 'UML:Stereotype', self.modelNS)
 			ust.setProp('name', name)
-			ust.setProp('xmi.id', generateID())
+			ust.setProp('xmi.id', generateID(name))
 			self.stereotypes[name] = ust
 		mes = addElement(self.doc, 'UML:ModelElement.stereotype', parent.parent)
 		stereotype = addElement(self.doc, 'UML:Stereotype', mes)
@@ -513,7 +519,7 @@ class XMI:
 	def makeActivityModel(self, name, parent):
 		model = addElement(self.doc, 'UML:ActivityGraph', parent)
 		model.setProp('name', name)
-		model.setProp('xmi.id', generateID())
+		model.setProp('xmi.id', generateID(name))
 		return model
 
 	def makeTransition(self, source, target, parent, name=None):
@@ -541,7 +547,7 @@ class XMI:
 			partitions = addElement(self.doc, 'UML:ActivityGraph.partition', parent)
 		partition = addElement(self.doc, 'UML:Partition', partitions)
 		partition.setProp('name', name)
-		partition.setProp('xmi.id', generateID())
+		partition.setProp('xmi.id', generateID(name))
 		return partition
 
 	def addActivityToLane(self, state, parent):
@@ -598,7 +604,7 @@ class XMI:
 
 		state = addElement(self.doc, 'UML:%s' % type, sub)
 		state.setProp('name', name)
-		state.setProp('xmi.id', generateID())
+		state.setProp('xmi.id', generateID(name))
 
 		return state
 
