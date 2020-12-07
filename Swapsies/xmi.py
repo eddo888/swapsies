@@ -328,7 +328,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', clasz)
 
 	def assignBaseClass(self, subtype, supertype, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		generalized = addElement(self.doc, 'UML:Generalization', parent)
 		generalized.setProp('subtype', supertype.parent.prop('xmi.id'))
 		generalized.setProp('supertype', subtype.parent.prop('xmi.id'))
