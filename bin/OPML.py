@@ -263,7 +263,7 @@ class OPML(object):
 				),
 			})					
 
-		name = os.path.join(os.path.dirname(path), 'comments.opml')
+		name = re.sub('.docx*$', '.opml', file, flags=re.IGNORECASE)
 		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)			
@@ -339,7 +339,7 @@ class OPML(object):
 				})
 					
 		
-		name = f'{path}.opml'
+		name = re.sub('.docx*$', '.opml', file, flags=re.IGNORECASE)
 		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
@@ -395,7 +395,7 @@ class OPML(object):
 			stack[-1]['outline'].append(outline)				
 
 			
-		name = f'{path}.opml'
+		name = re.sub('.docx*$', '.opml', file, flags=re.IGNORECASE)
 		with open(name,'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
@@ -443,7 +443,7 @@ class OPML(object):
 				for c in range(sheet.ncols):
 					_pop(stack)
 					
-		name = f'{path}.opml'
+		name = re.sub('.xlsx*$', '.opml', file, flags=re.IGNORECASE)
 		with open(name,'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
