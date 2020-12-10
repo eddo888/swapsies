@@ -413,6 +413,54 @@ class OPML(object):
 			print(name)
 
 
+	#.............................................................
+	@args.operation
+	def xlsx2opml(self, file):
+		if not file.endswith('xlsx'):
+			sys.stderr.write('not an xlsx file\n')
+			return
+
+		path = os.path.expanduser(file)
+		workbook = open_workbook(filename=path)
+
+		opml = self._createOPML(file)
+		
+		body = opml['opml']['body']
+
+		# stack[-1] is the current parent
+		stack = [ body ]
+
+		def _push(stack, value):
+			if 'outline' not in stack[-1].keys():
+				stack[-1]['outline'] = []
+			outline = {
+				'@text': value,
+			}
+			stack[-1]['outline'].append(outline)				
+			parent = stack[-1]['outline'][-1]
+			stack.append(parent)
+				
+		def _pop(stack):
+			stack.pop()
+
+		for sheet in workbook.sheets():
+
+			_push(stack, sheet.name)
+
+			for r in range(sheet.nrows):
+			
+				for c in range(sheet.ncols):
+					_push(stack, sheet.cell(r,c).value)
+
+				for c in range(sheet.ncols):
+					_pop(stack)
+					
+		name = f'{path}.opml'
+		with open(name,'w') as output:
+			xmltodict.unparse(opml, output)
+		print(name)
+
+
 #_________________________________________________________________
 if __name__ == '__main__': args.execute()
 
