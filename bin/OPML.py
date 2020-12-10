@@ -339,16 +339,10 @@ class OPML(object):
 				})
 					
 		
-		name = os.path.join(os.path.dirname(path), 'outline.opml')
+		name = f'{path}.opml'
 		with open(name, 'w') as output:
 			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
-
-		if False:
-			name = os.path.join(os.path.dirname(path), 'outline.json')
-			with open(name, 'w') as output:
-				json.dump(opml, output, indent=4)
-			print(name)
 
 
 	#.............................................................
@@ -401,16 +395,10 @@ class OPML(object):
 			stack[-1]['outline'].append(outline)				
 
 			
-		name = os.path.join(os.path.dirname(path), 'outline.opml')
+		name = f'{path}.opml'
 		with open(name,'w') as output:
-			xmltodict.unparse(opml, output)
+			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
-
-		if False:
-			name = os.path.join(os.path.dirname(path), 'outline.json')
-			with open(name,'w') as output:
-				json.dump(opml, output, indent=4)
-			print(name)
 
 
 	#.............................................................
@@ -457,7 +445,7 @@ class OPML(object):
 					
 		name = f'{path}.opml'
 		with open(name,'w') as output:
-			xmltodict.unparse(opml, output)
+			xmltodict.unparse(opml, output, encoding='UTF8', pretty=True)
 		print(name)
 
 
