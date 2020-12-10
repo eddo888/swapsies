@@ -245,7 +245,10 @@ def dict2md(js):
 					num = 'c%s' % col['@number']
 					headers[num] = text
 					lengths[num] = len(text)
-					aligns[num] = alignments[col['@alignment']]
+					if '@alignment' in col.keys():
+						aligns[num] = alignments[col['@alignment']]
+					else:
+						aligns[num] = '<'
 				values = list()
 			else:
 				value = dict.fromkeys(list(headers.keys()))
