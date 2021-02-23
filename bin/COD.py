@@ -15,6 +15,7 @@ from Perdy.pretty import prettyPrint
 from Perdy.parser import printXML
 from Perdy.pyxbext import directory
 from Argumental.Argue import Argue
+from Swapsies.xmi import XMI
 from GoldenChild.xpath import *
 
 logger = Logger()
@@ -168,6 +169,87 @@ class COD(object):
 
 		cod = XML(*getContextFromFile(os.path.expanduser(file)))
 		self.__nodes2text(file, cod, checkboxes=checkboxes, shownotes=shownotes)
+
+
+	#........................................................
+	@logger.debug
+	def __node2uml(self, cod, xmi, parent, childItem, indent='', checkboxes=False, shownotes=False):
+		'''
+		show a single item
+		'''
+
+		font, colour, state, checked = self.__attributes(cod, childItem, checkboxes)
+		
+		if colour in self.colours.keys():
+			_colour = self.xcolours[self.colours[colour]] or ''
+		else:
+			_colour = ''
+		_font = self.xfonts[self.fonts[font]] or ''
+
+		text = getElementText(cod.ctx, 'title', childItem)
+		
+		print('%s%s%s%s%s%s' % (
+			indent, _font, _colour, checked,
+			text,
+			self.xcolours['Off'], )
+		)
+
+		_package = xmi.makePackage(text, parent)
+		_diagram = xmi.makeClassDiagram(text, _package)
+										
+		if shownotes:
+			notes = getElement(cod.ctx, 'notes', childItem)
+			if notes:
+				note = notes.content
+				if note != '(null)':
+					#_package. notes todo
+					print('%s%s  "%s"%s' % (
+						self.xcolours['Teal'], '%s  ' % indent
+						if checkboxes else indent, note,
+						self.xcolours['Off'],
+					))
+
+		for grandChild in getElements(cod.ctx, 'ChildItem', childItem):
+			self.__node2uml(
+				cod,
+				xmi,
+				_package,
+				grandChild,
+				indent='%s  ' % indent,
+				checkboxes=checkboxes,
+				shownotes=shownotes
+			)
+			
+
+	#........................................................
+	@logger.debug
+	def __nodes2uml(self, file, cod, xmi, checkboxes=False, shownotes=False):
+		'''
+		show the cod file
+		'''
+		self.__document(cod, file)
+		
+		for childItem in getElements(cod.ctx, '/Document/Properties/context/ChildItem'):
+			self.__node2uml(cod, xmi, xmi.modelNS, childItem, checkboxes=checkboxes, shownotes=shownotes)
+			
+
+	#........................................................
+	@logger.debug
+	@args.operation
+	@args.parameter(name='checkboxes', short='c', flag=True, help='show checkboxes')
+	@args.parameter(name='shownotes', short='n', flag=True, help='show text notes')
+	def cod2uml(self, file, checkboxes=False, shownotes=False):
+		'''
+		convert a COD file to Sparx UML packages
+		'''
+
+		cod = XML(*getContextFromFile(os.path.expanduser(file)))
+		xmi = XMI(file)
+		
+		self.__nodes2uml(file, cod, xmi, checkboxes=checkboxes, shownotes=shownotes)
+
+		with open(f'{file}.xmi', 'w') as output:
+			output.write(str(xmi.doc))
 
 
 	#........................................................
