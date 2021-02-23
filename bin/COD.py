@@ -173,7 +173,7 @@ class COD(object):
 
 	#........................................................
 	@logger.debug
-	def __node2uml(self, cod, xmi, parent, childItem, indent='', checkboxes=False, shownotes=False):
+	def __node2uml(self, cod, xmi, parent, diagram, childItem, indent='', checkboxes=False, shownotes=False):
 		'''
 		show a single item
 		'''
@@ -194,13 +194,9 @@ class COD(object):
 			self.xcolours['Off'], )
 		)
 
-		_package = xmi.makePackage(text, parent)
-		_diagram = xmi.makeClassDiagram(text, _package)
-										
 		if shownotes:
 			notes = getElement(cod.ctx, 'notes', childItem)
 			if notes:
-				note = notes.content
 				if note != '(null)':
 					#_package. notes todo
 					print('%s%s  "%s"%s' % (
@@ -209,17 +205,35 @@ class COD(object):
 						self.xcolours['Off'],
 					))
 
-		for grandChild in getElements(cod.ctx, 'ChildItem', childItem):
-			self.__node2uml(
-				cod,
-				xmi,
-				_package,
-				grandChild,
-				indent='%s  ' % indent,
-				checkboxes=checkboxes,
-				shownotes=shownotes
-			)
-			
+		children = getElements(cod.ctx, 'ChildItem', childItem)
+		
+		if len(children) == 0:
+			_child = xmi.makeClass(text, parent)
+		else:
+			_child = xmi.makePackage(text, parent)
+			_diagram = xmi.makeClassDiagram(text, _child)
+
+			child = None
+			for grandChild in children:
+				sibling = self.__node2uml(
+					cod,
+					xmi,
+					_child,
+					_diagram,
+					grandChild,
+					indent='%s  ' % indent,
+					checkboxes=checkboxes,
+					shownotes=shownotes
+				)
+
+				if child:
+					xmi.makeAssociation('next', child, sibling, parent)
+				child = sibling
+
+		xmi.addDiagramClass(_child, diagram)
+
+		return _child
+	
 
 	#........................................................
 	@logger.debug
@@ -229,8 +243,9 @@ class COD(object):
 		'''
 		self.__document(cod, file)
 		
+		diagram = xmi.makeClassDiagram(file, xmi.modelNS)
 		for childItem in getElements(cod.ctx, '/Document/Properties/context/ChildItem'):
-			self.__node2uml(cod, xmi, xmi.modelNS, childItem, checkboxes=checkboxes, shownotes=shownotes)
+			self.__node2uml(cod, xmi, xmi.modelNS, diagram, childItem, checkboxes=checkboxes, shownotes=shownotes)
 			
 
 	#........................................................
