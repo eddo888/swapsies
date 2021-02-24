@@ -383,6 +383,18 @@ class XMI:
 		parameterC.setProp('xmi.idref', tid)
 		return
 
+	def makeDependency(self, source, target, parent, sid=None, tid=None, array=False):
+		if source:
+			sid = source.parent.prop('xmi.id')
+		if target:
+			tid = target.parent.prop('xmi.id')
+		dependency = addElement(self.doc, 'UML:Dependency', parent)
+		dependency.setProp('xmi.id', generateID())
+		dependency.setProp('visibility', 'public')
+		dependency.setProp('client', sid)
+		dependency.setProp('supplier', tid)
+		return dependency
+
 	def makeAssociation(self, name, source, target, parent, sid=None, tid=None, array=False):
 		if source:
 			sid = source.parent.prop('xmi.id')
