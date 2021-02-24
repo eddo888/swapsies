@@ -4,6 +4,8 @@
 
 import sys, os, json, logging, arrow, codecs
 
+#sys.path.insert(0,'..')
+
 from datetime import datetime
 from uuid import uuid4
 
@@ -194,16 +196,19 @@ class COD(object):
 			self.xcolours['Off'], )
 		)
 
+		note = None
 		if shownotes:
 			notes = getElement(cod.ctx, 'notes', childItem)
 			if notes:
+				note = notes.content
 				if note != '(null)':
-					#_package. notes todo
 					print('%s%s  "%s"%s' % (
 						self.xcolours['Teal'], '%s  ' % indent
 						if checkboxes else indent, note,
 						self.xcolours['Off'],
 					))
+				else:
+					note  = None
 
 		children = getElements(cod.ctx, 'ChildItem', childItem)
 		
@@ -227,11 +232,16 @@ class COD(object):
 				)
 
 				if child:
-					xmi.makeAssociation('next', child, sibling, parent)
+					xmi.makeDependency(child, sibling, parent)
 				child = sibling
 
 		xmi.addDiagramClass(_child, diagram)
 
+		if note:
+			xmi.makeNote(note, _child)
+
+		xmi.makeContentTag('completed', checked, _child)
+		
 		return _child
 	
 

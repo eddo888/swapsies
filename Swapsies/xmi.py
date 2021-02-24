@@ -235,7 +235,7 @@ class XMI:
 		package.setProp('isSpecification', 'false')
 		package.setProp('name', name)
 		package.setProp('visibility', 'public')
-		package.setProp('xmi.id', generateID(uid or name))
+		package.setProp('xmi.id', generateID(uid))
 		element = addElement(self.doc, 'UML:Namespace.ownedElement', package)
 		return element
 
@@ -246,14 +246,14 @@ class XMI:
 		return package
 
 	def makeCollaboration(self, name, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		collaboration = addElement(self.doc, 'UML:Collaboration', parent)
 		collaboration.setProp('name', name)
 		collaboration.setProp('xmi.id', uid)
 		return addElement(self.doc, 'UML:Namespace.ownedElement', collaboration)
 
 	def makeRequirement(self, name, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		requirement = addElement(self.doc, 'UML:ClassifierRole', parent)
 		requirement.setProp('isAbstract', 'false')
 		requirement.setProp('isLeaf', 'false')
@@ -269,7 +269,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', requirement)
 
 	def makeActor(self, name, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		actor = addElement(self.doc, 'UML:Actor', parent)
 		actor.setProp('isAbstract', 'false')
 		actor.setProp('isLeaf', 'false')
@@ -284,7 +284,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', actor)
 
 	def makeUseCase(self, name, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		useCase = addElement(self.doc, 'UML:UseCase', parent)
 		useCase.setProp('isAbstract', 'false')
 		useCase.setProp('isLeaf', 'false')
@@ -299,7 +299,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', useCase)
 
 	def makeComponent(self, name, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		system = addElement(self.doc, 'UML:Component', parent)
 		system.setProp('isAbstract', 'false')
 		system.setProp('isLeaf', 'false')
@@ -315,7 +315,7 @@ class XMI:
 		return addElement(self.doc, 'UML:Classifier.feature', system)
 
 	def makeClass(self, name, parent, uid=None):
-		uid = generateID(uid or name)
+		uid = generateID(uid)
 		clasz = addElement(self.doc, 'UML:Class', parent)
 		clasz.setProp('isAbstract', 'false')
 		clasz.setProp('isLeaf', 'false')
@@ -509,6 +509,9 @@ class XMI:
 		tag.setProp('value', value)
 		return
 
+	def makeNote(self, note, parent):
+		self.makeLocalTag('documentation',  note, parent.parent)
+			
 	def makeContentTag(self, name, value, parent):
 		tag = addElement(self.doc, 'UML:TaggedValue', self.content)
 		tag.setProp('xmi.id', generateID())
