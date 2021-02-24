@@ -215,7 +215,7 @@ class XMI:
 		model.setProp('isSpecification', 'false')
 		model.setProp('name', name or self.now.strftime(self.timestamp))
 		model.setProp('visibility', 'public')
-		model.setProp('xmi.id', generateID(name))
+		model.setProp('xmi.id', generateID())
 		self.modelNS = addElement(self.doc, 'UML:Namespace.ownedElement', model)
 		#self.rootClass = self.makeClass('EARootClass',self.modelNS)
 		#self.rootClass.parent.setProp('isRoot','true')
@@ -375,7 +375,7 @@ class XMI:
 		if not tid:
 			return
 		parameterP = addElement(self.doc, 'UML:Parameter', parent)
-		parameterP.setProp('xmi.id', generateID(name))
+		parameterP.setProp('xmi.id', generateID())
 		parameterP.setProp('name', name)
 		parameterP.setProp('kind', kind)
 		parameterT = addElement(self.doc, 'UML:Parameter.type', parameterP)
@@ -473,7 +473,7 @@ class XMI:
 		cr = addElement(self.doc, 'UML:ClassifierRole', parent)
 		cr.setProp('name', name)
 		cr.setProp('visibility', 'public')
-		cr.setProp('xmi.id', generateID(name))
+		cr.setProp('xmi.id', generateID())
 		#cr.setProp('base',self.rootClass.parent.prop('xmi.id'))
 		self.makeLocalTag('classifier', type.parent.prop('xmi.id'), cr)
 		self.makeLocalTag('classname', type.parent.prop('name'), cr)
@@ -524,7 +524,7 @@ class XMI:
 		if not name in list(self.stereotypes.keys()):
 			ust = addElement(self.doc, 'UML:Stereotype', self.modelNS)
 			ust.setProp('name', name)
-			ust.setProp('xmi.id', generateID(name))
+			ust.setProp('xmi.id', generateID())
 			self.stereotypes[name] = ust
 		mes = addElement(self.doc, 'UML:ModelElement.stereotype', parent.parent)
 		stereotype = addElement(self.doc, 'UML:Stereotype', mes)
@@ -534,7 +534,7 @@ class XMI:
 	def makeActivityModel(self, name, parent):
 		model = addElement(self.doc, 'UML:ActivityGraph', parent)
 		model.setProp('name', name)
-		model.setProp('xmi.id', generateID(name))
+		model.setProp('xmi.id', generateID())
 		return model
 
 	def makeTransition(self, source, target, parent, name=None):
@@ -562,7 +562,7 @@ class XMI:
 			partitions = addElement(self.doc, 'UML:ActivityGraph.partition', parent)
 		partition = addElement(self.doc, 'UML:Partition', partitions)
 		partition.setProp('name', name)
-		partition.setProp('xmi.id', generateID(name))
+		partition.setProp('xmi.id', generateID())
 		return partition
 
 	def addActivityToLane(self, state, parent):
@@ -619,7 +619,7 @@ class XMI:
 
 		state = addElement(self.doc, 'UML:%s' % type, sub)
 		state.setProp('name', name)
-		state.setProp('xmi.id', generateID(name))
+		state.setProp('xmi.id', generateID())
 
 		return state
 
