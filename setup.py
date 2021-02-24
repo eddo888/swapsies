@@ -8,8 +8,7 @@ pwd = path.abspath(path.dirname(__file__))
 with codecs.open(path.join(pwd, 'README.md'), 'r', encoding='utf8') as input:
 	long_description = input.read()
 
-vers
-ion='1.42'
+version='1.42'
 	
 setup(
 	name='Swapsies',
