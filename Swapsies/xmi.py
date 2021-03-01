@@ -225,6 +225,7 @@ class XMI:
 		self.extensions = addElement(self.doc, 'XMI.extensions')
 		self.extensions.setProp('xmi.extender', 'Enterprise Architect 2.5')
 		self.files = addElement(self.doc, 'EAModel.file', self.extensions)
+		self.resources = addElement(self.doc, 'EAModel.resource', self.extensions)
 		return
 
 	def makePackage(self, name, parent, uid=None):
@@ -330,6 +331,15 @@ class XMI:
 		self.makeLocalTag('ea_ntype', '0', system)
 		return addElement(self.doc, 'UML:Classifier.feature', system)
 
+	def makeResource(self, name, role, subject, start_date, end_date):
+		resource = addElement(self.doc, 'EAResource', self.resources)
+		setAttribute(resource, 'name', name)
+		setAttribute(resource, 'type', role)
+		setAttribute(resource, 'subject', subject.parent.prop('xmi.id'))
+		self.makeLocalTag('datestart', start_date.strftime(self.timestamp), resource)
+		self.makeLocalTag('dateend', end_date.strftime(self.timestamp), resource)
+		return resource
+				   
 	def makeClass(self, name, parent, uid=None):
 		uid = generateID(uid)
 		clasz = addElement(self.doc, 'UML:Class', parent)
