@@ -23,6 +23,12 @@ for base_type in ['text','number','datetime']:
 children_package = xmi.makePackage('Children', fundamental_package)
 xmi.addDiagramClass(children_package, fundamental_diagram)
 
+feature = xmi.makeFeature('my feature', children_package)
+xmi.addDiagramClass(feature, fundamental_diagram)
+
+requriement = xmi.makeRequirement('my requriement', children_package)
+xmi.addDiagramClass(requriement, fundamental_diagram)
+
 xmi.makeDependency(children_package, fundamental_package, xmi.modelNS)
 
 _the_type = xmi.makeClass('the_type', children_package)

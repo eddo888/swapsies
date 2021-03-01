@@ -262,11 +262,27 @@ class XMI:
 		requirement.setProp('name', name)
 		requirement.setProp('visibility', 'public')
 		requirement.setProp('xmi.id', uid)
-		self.makeLocalTag('stereotype', 'Functional', requirement)
+		self.makeLocalTag('gentype','<none>', requirement)
 		self.makeLocalTag('ea_eleType', 'element', requirement)
 		self.makeLocalTag('ea_stype', 'Requirement', requirement)
 		self.makeLocalTag('ea_ntype', '0', requirement)
 		return addElement(self.doc, 'UML:Classifier.feature', requirement)
+
+	def makeFeature(self, name, parent, uid=None):
+		uid = generateID(uid)
+		feature = addElement(self.doc, 'UML:ClassifierRole', parent)
+		feature.setProp('isAbstract', 'false')
+		feature.setProp('isLeaf', 'false')
+		feature.setProp('isRoot', 'false')
+		feature.setProp('isSpecification', 'false')
+		feature.setProp('name', name)
+		feature.setProp('visibility', 'public')
+		feature.setProp('xmi.id', uid)
+		self.makeLocalTag('gentype','<none>', feature)
+		self.makeLocalTag('ea_eleType', 'element', feature)
+		self.makeLocalTag('ea_stype', 'Feature', feature)
+		self.makeLocalTag('ea_ntype', '0', feature)
+		return addElement(self.doc, 'UML:Classifier.feature', feature)
 
 	def makeActor(self, name, parent, uid=None):
 		uid = generateID(uid)
