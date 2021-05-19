@@ -91,12 +91,25 @@ class COD(object):
 	#........................................................
 	def __document(self, cod, file):
 		s = getElementText(cod.ctx, '/Document/Properties/lastModificationTime')
+		if not s: return
 		u = arrow.get(float(s))
 		a = u.to('local').format('YYYY-MM-DD HH:mm:ss SSS Z')
 		t = getElementText(cod.ctx, '/Document/Properties/title')
 		print('%s -> "%s" => %s' % (file, t, a))
 
-				   
+
+	
+	#........................................................
+	@logger.debug
+	def __font(self, font):
+		__font = ''
+		for _font in self.fonts.keys():
+			if _font == 0: continue
+			if (font & _font) > 0:
+				__font += self.xfonts[self.fonts[_font]]
+		return __font
+	
+		
 	#........................................................
 	@logger.debug
 	def __node2text(self, cod, childItem, indent='', checkboxes=False, shownotes=False):
@@ -110,7 +123,7 @@ class COD(object):
 			_colour = self.xcolours[self.colours[colour]] or ''
 		else:
 			_colour = ''
-		_font = self.xfonts[self.fonts[font]] or ''
+		_font = self.__font(font)
 		
 		print('%s%s%s%s%s%s' % (
 			indent, _font, _colour, checked,
@@ -186,7 +199,7 @@ class COD(object):
 			_colour = self.xcolours[self.colours[colour]] or ''
 		else:
 			_colour = ''
-		_font = self.xfonts[self.fonts[font]] or ''
+		_font = self.__font(font)
 
 		text = getElementText(cod.ctx, 'title', childItem)
 		
@@ -290,7 +303,7 @@ class COD(object):
 			_colour = self.xcolours[self.colours[colour]] or ''
 		else:
 			_colour = ''
-		_font = self.xfonts[self.fonts[font]] or ''
+		_font = self.__font(font)
 		
 		if not depth: depth = 1
 		

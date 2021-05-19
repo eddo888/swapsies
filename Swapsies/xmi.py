@@ -713,4 +713,5 @@ class XMI:
 		style = ''.join(['%s=%s;' % (x, types[x]) for x in list(types.keys())])
 		return style
 
+	
 
