@@ -10,7 +10,7 @@ from zipfile import ZipFile
 
 from Perdy.pyxbext import directory
 
-from xlrd import open_workbook,xldate_as_tuple
+from xlrd import open_workbook, xldate_as_tuple
 from xlwt import Workbook
 
 from docx import Document
@@ -404,8 +404,8 @@ class OPML(object):
 	#.............................................................
 	@args.operation
 	def xlsx2opml(self, file):
-		if not file.endswith('xlsx'):
-			sys.stderr.write('not an xlsx file\n')
+		if not file.endswith('xls'):
+			sys.stderr.write('not an xls file\n')
 			return
 
 		path = os.path.expanduser(file)
