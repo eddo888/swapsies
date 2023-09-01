@@ -8,7 +8,7 @@ pwd = path.abspath(path.dirname(__file__))
 with codecs.open(path.join(pwd, 'README.md'), 'r', encoding='utf8') as input:
 	long_description = input.read()
 
-version='1.49'
+version='1.50'
 	
 setup(
 	name='Swapsies',
@@ -46,6 +46,7 @@ setup(
 		'bin/contact2vcard.py',
 		'bin/xls2dict.py',
 		'bin/xlsx2dict.py',
+		'bin/xlsx2smmx.py',
 		'bin/COD.py',
 		'bin/tree2xmi.py',
 		'bin/cdata2xml.py',
