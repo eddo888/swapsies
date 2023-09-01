@@ -6,6 +6,30 @@ from GoldenChild.xpath import *
 from Perdy.parser import printXML
 from Spanners.IdentityCache import IdentityCache
 
+empty='''\
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE simplemind-mindmaps>
+<simplemind-mindmaps generator="SimpleMindWin32" gen-version="2.2.0" doc-version="3">
+    <mindmap>
+        <meta>
+            <guid guid="7077E873F4AB4B1DBAED22AA98B10293"/>
+            <title text="SimpleMind"/>
+            <style key="system.basic-chart"/>
+            <auto-numbering style="disabled"/>
+            <scrollstate zoom="100" x="628" y="233"/>
+            <selection guid="6iDcrhzb4ka0Ag540bwc8g" type="node" id="0"/>
+            <main-centraltheme id="0"/>
+        </meta>
+        <topics>
+            <topic id="0" parent="-1" guid="6iDcrhzb4ka0Ag540bwc8g" x="536.67" y="333.33" text="SimpleMind" textfmt="plain">
+                <layout mode="list" direction="auto" flow="auto"/>
+            </topic>
+        </topics>
+        <relations/>
+    </mindmap>
+</simplemind-mindmaps>
+'''
+
 class SMMX:
 	'''
 	simple xml wrapper around the Simple Mind SMMX file format
@@ -20,15 +44,19 @@ class SMMX:
 	def load(self, file):
 		self.file = file
 		print(f'< {file}')
-		zf = ZipFile(file)
-		with zf.open(self.name) as input:
-			xml = input.read().decode('UTF-8')
-			self.mindmap = XML(*getContextFromString(xml))
 
-			for topic in getElements(self.mindmap.ctx, 'topic', self.topics):
-				id = int(getAttribute(topic, 'id'))
-				if id > self.last:
-					self.last = id
+		if file:
+			zf = ZipFile(file)
+			with zf.open(self.name) as input:
+				xml = input.read().decode('UTF-8')
+				self.mindmap = XML(*getContextFromString(xml))
+		else:
+			self.mindmap = XML(*getContextFromString(empty))
+			
+		for topic in getElements(self.mindmap.ctx, 'topic', self.topics):
+			id = int(getAttribute(topic, 'id'))
+			if id > self.last:
+				self.last = id
 
 
 	@property
@@ -88,10 +116,11 @@ class SMMX:
 	def save(self, file=None):
 		file = file or self.file
 		print(f'> {file}')
-		zf = ZipFile(file, 'w')
-		with zf.open(self.name, 'w') as output:
-			xml = str(self.mindmap.doc)
-			output.write(xml.encode('UTF-8'))
+		if file:
+			zf = ZipFile(file, 'w')
+			with zf.open(self.name, 'w') as output:
+				xml = str(self.mindmap.doc)
+				output.write(xml.encode('UTF-8'))
 		self.ids.save()
 		
 
