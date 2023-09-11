@@ -26,7 +26,8 @@ class Converter:
 	@args.parameter(name='input', short='i', help='source SMMX to populate')
 	@args.parameter(name='output', short='o', help='output SMMX file')
 	@args.parameter(name='headers', short='H', flag=True, help='include headers')
-	def toSMMX(self, xlsx=None, input=None, output=None, headers=False):
+	@args.parameter(name='noteify', short='n', flag=True, help='put long notes into text field')
+	def toSMMX(self, xlsx=None, input=None, output=None, headers=False, noteify=False):
 		'''
 		create a nested mind map based on columns in excel
 		'''
@@ -44,11 +45,22 @@ class Converter:
 				if self.verbose:
 					print(f'{indent}{i}')
 
-				text = str(i)
+				name = str(i)
+				if not name: continue
+				if name == 'nan': continue
+				
 				if headers:
-					text = f'{k[0]}: {text}'
+					name = f'{k[0]}: {name}'
+
+				text = None
+				if noteify:
+					bits = name.split('.')
+					name = bits[0]
+					if len(bits) > 1:
+						name = f'{name}.'
+						text = '.'.join(bits[1:])
 					
-				child = smmx.add(text, parent=mm)
+				child = smmx.add(name, text=text, parent=mm)
 
 				if len(k) > 1:
 					smmx.task(child, tipe='rollup')
@@ -64,11 +76,11 @@ class Converter:
 			if self.verbose:
 				print(sheet.title)
 
-			text = sheet.title
+			name = sheet.title
 			if headers:
-				text = f'Sheet: {text}'
+				name = f'Sheet: {name}'
 				
-			parent = smmx.add(text)
+			parent = smmx.add(name)
 			setAttribute(parent, 'checkbox-mode', 'roll-up-progress')
 
 			df = pandas.read_excel(xlsx, sheet_name=sheet.title).reset_index(drop=True)

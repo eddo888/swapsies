@@ -6,7 +6,8 @@ from GoldenChild.xpath import *
 from Perdy.parser import printXML
 from Spanners.IdentityCache import IdentityCache
 
-empty='''\
+def empty():
+	return '''\
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE simplemind-mindmaps>
 <simplemind-mindmaps generator="SimpleMindWin32" gen-version="2.2.0" doc-version="3">
@@ -30,6 +31,7 @@ empty='''\
 </simplemind-mindmaps>
 '''
 
+
 class SMMX:
 	'''
 	simple xml wrapper around the Simple Mind SMMX file format
@@ -51,7 +53,7 @@ class SMMX:
 				xml = input.read().decode('UTF-8')
 				self.mindmap = XML(*getContextFromString(xml))
 		else:
-			self.mindmap = XML(*getContextFromString(empty))
+			self.mindmap = XML(*getContextFromString(empty()))
 			
 		for topic in getElements(self.mindmap.ctx, 'topic', self.topics):
 			id = int(getAttribute(topic, 'id'))
@@ -90,6 +92,9 @@ class SMMX:
 
 				
 	def add(self, name, text=None, parent=None):
+		if not name:
+			return
+		
 		child = addElement(self.mindmap.doc, 'topic', self.topics)
 		self.last += 1
 		setAttribute(child, 'id', f'{self.last}')
